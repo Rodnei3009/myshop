@@ -1146,6 +1146,10 @@ img {
 }
 .img-circle {
   border-radius: 50%;
+  background-color: white;
+  width: 250px;
+  padding: 20px;
+  vertical-align: middle;
 }
 hr {
   margin-top: 20px;
