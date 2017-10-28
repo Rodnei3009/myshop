@@ -1148,7 +1148,8 @@ img {
   border-radius: 50%;
   background-color: white;
   width: 250px;
-  padding: 20px;
+  height: 250px;
+  padding: 0px;
   vertical-align: middle;
 }
 hr {
@@ -6928,4 +6929,11 @@ a.list-group-item-danger.active:focus {
 .jumbotron h5,
 .jumbotron h6 {
   color: #fff;
+}
+
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }
