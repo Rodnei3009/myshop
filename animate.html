@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="animate.min.css" media="screen">    
+<link rel="stylesheet" href="animate.min.css" media="screen"> 
+<link rel="stylesheet" href="bootstrap.css" media="screen">    
 
-<!--
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen">
+<script src="bower_components/bootstrap/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 <style> 
 img {
     width: 200px;
@@ -14,19 +18,58 @@ img {
     animation-timing-function: ease-in-out;
 }
 
+div.full {
+    width: 300px;
+    height: 100px;
+    position: relative;
+    animation-name: example;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+div.esquerda {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+div.direita {
+    background-color: yellow;
+    width: 200px;
+    height: 100px;
+    margin-left: 100px;
+    position: relative;
+}
+
+div.inline { float:left; }
+.clearBoth { clear:both; }
+
+div:hover {
+    -webkit-animation-play-state: paused; /* Chrome, Safari, Opera */
+    animation-play-state: paused;
+    background-color: blue;
+}
+
 @keyframes example {
-    0%   {left:-200px;}
-    100% {left:200px;}
+    0%   {margin-left:-110px;}
+    100% {margin-left:0px;}
 }
 </style>
--->
 
 </head>
 <body>
 
+<div class="full">
+    <div class="inline esquerda ">
+        <div class="inline direita">AAA</div>
+    </div>
+</div>
 
 
-<img class="animated fadeInRight" src="img/cart3.png">
+<div><span class="glyphicon glyphicon-trash">glyphicon glyphicon-trash</span></div>
+<span class="glyphicon glyphicon-trash"></span>
 
 </body>
 </html>
+
