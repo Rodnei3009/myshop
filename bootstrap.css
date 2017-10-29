@@ -2281,8 +2281,8 @@ th {
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
   padding: 8px;
-  line-height: 1.42857143;
-  vertical-align: top;
+  line-height: 1.2;
+  vertical-align: middle;
   border-top: 1px solid #282828;
 }
 .table > thead > tr > th {
@@ -2329,6 +2329,13 @@ th {
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: #080808;
 }
+
+.table-striped > tbody > tr > td {
+  font-size: 12px;
+  font-weight: normal;
+  padding: 5px;
+}
+
 .table-hover > tbody > tr:hover {
   background-color: #282828;
 }
