@@ -3041,6 +3041,15 @@ select[multiple].input-lg {
   width: 180px;
   float: right;
 }
+
+.btn.medio {
+  width: 90px;
+}
+
+.btn.pequeno {
+  width: 45px;
+}
+
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus,
