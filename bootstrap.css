@@ -2333,7 +2333,7 @@ th {
 .table-striped > tbody > tr > td {
   font-size: 12px;
   font-weight: normal;
-  padding: 5px;
+  padding: 10px;
 }
 
 .table-hover > tbody > tr:hover {
