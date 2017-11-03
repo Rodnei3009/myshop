@@ -1133,44 +1133,15 @@ Deslizar
 */
 
 
-.deslizar{
-
-	animation-name: deslizar;
-	-webkit-animation-name: deslizar;	
-
-	animation-duration: 1s;	
-	-webkit-animation-duration: 1s;
-
-	animation-timing-function: ease-in-out;	
-	-webkit-animation-timing-function: ease-in-out;		
-
-	visibility: visible !important;	
-}
-
-@keyframes deslizar {
-	0% {
-		transform: translateX(-150%);
-	}
-	100% {
-		transform: translateX(0%);
-	}
-}
-
-@-webkit-keyframes deslizar {
-	0% {
-		-webkit-transform: translateX(-150%);
-	}
-	100% {
-		-webkit-transform: translateX(0%);
-	}
-}
-
 .delete{
 	background-color: red;
 	width: 20%;
-	height: 50px;
+	height: 40px;
 	float: left;
-	display: inline-block;	
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 40px;
+
 	animation-name: delete;
 	-webkit-animation-name: delete;	
 
@@ -1200,11 +1171,14 @@ Deslizar
 }
 
 .reduce{
-	background-color: yellow;
+	background-color: black;
 	width: 80%;
-	height: 50px;
+	height: 40px;
 	float: left;
 	display: inline-block;
+	vertical-align: middle;
+	line-height: 40px;
+
 	animation-name: reduce;
 	-webkit-animation-name: reduce;	
 
@@ -1234,28 +1208,30 @@ Deslizar
 }
 
 .esq {
-	height: 50px;
+	height: 40px;
 	width: 0%;
 	display: inline-block;
 	background-color: red;
 	float: left;
 	vertical-align: middle;
+	line-height: 40px;
 }
 
 .dir {
-	height: 50px;
+	height: 40px;
 	width: 100%;
 	display: inline-block;
-	background-color: yellow;
+	background-color: black;
 	float: left;
 	vertical-align: middle;
+	line-height: 40px;
 }
 
 
 .full {
     
     width: 300px;
-    height: 50px;
+    height: 40px;
     position: relative;
     animation-name: example;
     animation-duration: 0.5s;
@@ -1265,15 +1241,15 @@ Deslizar
 .esquerda {
     background-color: red;
     width: 100px;
-    height: 50px;
+    height: 40px;
     position: relative;
     float: left;
 }
 
 .direita {
-    background-color: yellow;
+    background-color: black;
     width: 500px;
-    height: 50px;
+    height: 40px;
     margin-left: 100px;
     position: relative;
     float: left;
@@ -1292,9 +1268,12 @@ Deslizar
 .deleteback{
 	background-color: red;
 	width: 0%;
-	height: 50px;
+	height: 40px;
 	float: left;
-	display: inline-block;	
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 40px;
+
 	animation-name: deleteback;
 	-webkit-animation-name: deleteback;	
 
@@ -1324,11 +1303,14 @@ Deslizar
 }
 
 .reduceback{
-	background-color: yellow;
+	background-color: black;
 	width: 100%;
-	height: 50px;
+	height: 40px;
 	float: left;
 	display: inline-block;
+	vertical-align: middle;
+	line-height: 40px;
+
 	animation-name: reduceback;
 	-webkit-animation-name: reduceback;	
 
