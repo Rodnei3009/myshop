@@ -1167,7 +1167,7 @@ Deslizar
 
 .delete{
 	background-color: red;
-	width: 10%;
+	width: 20%;
 	height: 50px;
 	float: left;
 	display: inline-block;	
@@ -1203,7 +1203,7 @@ Deslizar
 
 .reduce{
 	background-color: yellow;
-	width: 90%;
+	width: 80%;
 	height: 50px;
 	float: left;
 	display: inline-block;
