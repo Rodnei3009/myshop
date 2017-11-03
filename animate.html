@@ -2,11 +2,12 @@
 <html>
 <head>
 <link rel="stylesheet" href="animate.min.css" media="screen"> 
-<link rel="stylesheet" href="bootstrap.css" media="screen">    
+<link rel="stylesheet" href="bootstrap.css" media="screen">
+<link rel="stylesheet" href="animation.css" media="screen">    
 
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen">
-<script src="bower_components/bootstrap/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
 <style> 
 img {
@@ -18,7 +19,7 @@ img {
     animation-timing-function: ease-in-out;
 }
 
-div.full {
+.full {
     width: 300px;
     height: 100px;
     position: relative;
@@ -27,14 +28,14 @@ div.full {
     animation-timing-function: ease-in-out;
 }
 
-div.esquerda {
+.esquerda {
     background-color: red;
     width: 100px;
     height: 100px;
     position: relative;
 }
 
-div.direita {
+.direita {
     background-color: yellow;
     width: 200px;
     height: 100px;
@@ -42,13 +43,11 @@ div.direita {
     position: relative;
 }
 
-div.inline { float:left; }
+.inline { float:left; }
 .clearBoth { clear:both; }
 
-div:hover {
-    -webkit-animation-play-state: paused; /* Chrome, Safari, Opera */
-    animation-play-state: paused;
-    background-color: blue;
+.nova {
+    background-color: black;
 }
 
 @keyframes example {
@@ -60,15 +59,28 @@ div:hover {
 </head>
 <body>
 
-<div class="full">
-    <div class="inline esquerda ">
-        <div class="inline direita">AAA</div>
-    </div>
-</div>
 
+<div id="div1" style="height: 100px; background-color: yellow">AAA</div>
+
+<a href="#" id="stretchRightBtn" class="button">Stretch Right →</a>
 
 <div><span class="glyphicon glyphicon-trash">glyphicon glyphicon-trash</span></div>
 <span class="glyphicon glyphicon-trash"></span>
+
+<script>
+    $('div1').click(function() {
+        $(this).addClass("slideUp");
+    });
+
+    $('#stretchRightBtn').click(function() {
+        $(this).each(function(){
+                $('#object').removeClass();             
+                $('#object').addClass("stretchRight");
+            }); 
+    });
+    
+</script>
+
 
 </body>
 </html>
