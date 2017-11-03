@@ -1126,6 +1126,45 @@ stretchRight
 }
 
 
+/*
+==============================================
+Deslizar
+==============================================
+*/
+
+
+.deslizar{
+	animation-name: deslizar;
+	-webkit-animation-name: deslizar;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes deslizar {
+	0% {
+		transform: translateX(-150%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@-webkit-keyframes deslizar {
+	0% {
+		-webkit-transform: translateX(-150%);
+	}
+	100% {
+		-webkit-transform: translateX(0%);
+	}
+}
+
+
 .full {
     
     width: 300px;
