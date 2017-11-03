@@ -1174,8 +1174,8 @@ Deslizar
 	animation-name: delete;
 	-webkit-animation-name: delete;	
 
-	animation-duration: 0.4s;	
-	-webkit-animation-duration: 0.4s;
+	animation-duration: 0.1s;	
+	-webkit-animation-duration: 0.1s;
 
 	animation-timing-function: ease-in-out;	
 	-webkit-animation-timing-function: ease-in-out;		
@@ -1184,21 +1184,19 @@ Deslizar
 }
 
 @keyframes delete {
-	0% {
-		width: 0%;
-	}
-	100% {
-		width: 10%;
-	}
+	0% {width: 4%;}
+	25% {width: 8%;}
+	50% {width: 12%;}
+	75% {width: 16%;}
+	100% {width: 20%;}
 }
 
 @-webkit-keyframes delete {
-	0% {
-		width: 0%;
-	}
-	100% {
-		width: 10%;
-	}
+	0% {width: 4%;}
+	25% {width: 8%;}
+	50% {width: 12%;}
+	75% {width: 16%;}
+	100% {width: 20%;}
 }
 
 .reduce{
@@ -1210,31 +1208,29 @@ Deslizar
 	animation-name: reduce;
 	-webkit-animation-name: reduce;	
 
-	animation-duration: 0.4s;	
-	-webkit-animation-duration: 0.4s;
+	animation-duration: 0.1s;	
+	-webkit-animation-duration: 0.1s;
 
 	animation-timing-function: ease-in-out;	
-	-webkit-animation-timing-function: ease-in-out;		
+	-webkit-animation-timing-function: ease-in-out;	
 
 	visibility: visible !important;	
 }
 
 @keyframes reduce {
-	0% {
-		width: 100%;
-	}
-	100% {
-		width: 90%;
-	}
+	0% {width: 96%;}
+	25% {width: 92%;}
+	50% {width: 88%;}
+	75% {width: 84%;}
+	100% {width: 80%;}
 }
 
 @-webkit-keyframes reduce {
-	0% {
-		width: 100%;
-	}
-	100% {
-		width: 90%;
-	}
+	0% {width: 96%;}
+	25% {width: 92%;}
+	50% {width: 88%;}
+	75% {width: 84%;}
+	100% {width: 80%;}
 }
 
 .esq {
@@ -1288,3 +1284,71 @@ Deslizar
     0%   {margin-left:-110px;}
     100% {margin-left:0px;}
 }
+
+
+
+/*
+==============================================
+slideNovo
+==============================================
+*/
+
+
+.slideNovo{
+	background-color: yellow;
+	height: 50px;
+
+	animation-name: slideNovo;
+	-webkit-animation-name: slideNovo;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes slideNovo {
+	0% {
+		transform: translateX(-150%);
+	}
+	50%{
+		transform: translateX(8%);
+	}
+	65%{
+		transform: translateX(-4%);
+	}
+	80%{
+		transform: translateX(4%);
+	}
+	95%{
+		transform: translateX(-2%);
+	}			
+	100% {
+		transform: translateX(0%);
+	}	
+}
+
+@-webkit-keyframes slideNovo {
+	0% {
+		-webkit-transform: translateX(-150%);
+	}
+	50%{
+		-webkit-transform: translateX(8%);
+	}
+	65%{
+		-webkit-transform: translateX(-4%);
+	}
+	80%{
+		-webkit-transform: translateX(4%);
+	}
+	95%{
+		-webkit-transform: translateX(-2%);
+	}			
+	100% {
+		-webkit-transform: translateX(0%);
+	}
+}
+
