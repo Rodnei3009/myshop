@@ -1134,6 +1134,7 @@ Deslizar
 
 
 .deslizar{
+
 	animation-name: deslizar;
 	-webkit-animation-name: deslizar;	
 
@@ -1164,6 +1165,94 @@ Deslizar
 	}
 }
 
+.delete{
+	background-color: red;
+	width: 10%;
+	height: 50px;
+	float: left;
+	display: inline-block;	
+	animation-name: delete;
+	-webkit-animation-name: delete;	
+
+	animation-duration: 0.5s;	
+	-webkit-animation-duration: 0.5s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes delete {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@-webkit-keyframes delete {
+	0% {
+		-webkit-transform: translateX(-100%);
+	}
+	100% {
+		-webkit-transform: translateX(0%);
+	}
+}
+
+.reduce{
+	background-color: yellow;
+	width: 90%;
+	height: 50px;
+	float: left;
+	display: inline-block;
+	animation-name: reduce;
+	-webkit-animation-name: reduce;	
+
+	animation-duration: 0.5s;	
+	-webkit-animation-duration: 0.5s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes reduce {
+	0% {
+		transform: translateX(-10%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@-webkit-keyframes reduce {
+	0% {
+		-webkit-transform: translateX(-10%);
+	}
+	100% {
+		-webkit-transform: translateX(0%);
+	}
+}
+
+.esq {
+	height: 50px;
+	width: 0%;
+	display: inline-block;
+	background-color: red;
+	float: left;
+}
+
+.dir {
+	height: 50px;
+	width: 100%;
+	display: inline-block;
+	background-color: yellow;
+	float: left;
+}
+
 
 .full {
     
@@ -1180,6 +1269,7 @@ Deslizar
     width: 100px;
     height: 50px;
     position: relative;
+    float: left;
 }
 
 .direita {
@@ -1188,6 +1278,7 @@ Deslizar
     height: 50px;
     margin-left: 100px;
     position: relative;
+    float: left;
 }
 
 .inline { float:left; }
