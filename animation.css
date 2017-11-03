@@ -1289,22 +1289,17 @@ Deslizar
 
 
 
-/*
-==============================================
-slideNovo
-==============================================
-*/
-
-
-.slideNovo{
-	background-color: yellow;
+.deleteback{
+	background-color: red;
+	width: 0%;
 	height: 50px;
+	float: left;
+	display: inline-block;	
+	animation-name: deleteback;
+	-webkit-animation-name: deleteback;	
 
-	animation-name: slideNovo;
-	-webkit-animation-name: slideNovo;	
-
-	animation-duration: 1s;	
-	-webkit-animation-duration: 1s;
+	animation-duration: 0.1s;	
+	-webkit-animation-duration: 0.1s;
 
 	animation-timing-function: ease-in-out;	
 	-webkit-animation-timing-function: ease-in-out;		
@@ -1312,45 +1307,53 @@ slideNovo
 	visibility: visible !important;	
 }
 
-@keyframes slideNovo {
-	0% {
-		transform: translateX(-150%);
-	}
-	50%{
-		transform: translateX(8%);
-	}
-	65%{
-		transform: translateX(-4%);
-	}
-	80%{
-		transform: translateX(4%);
-	}
-	95%{
-		transform: translateX(-2%);
-	}			
-	100% {
-		transform: translateX(0%);
-	}	
+@keyframes deleteback {
+	0% {width: 16%;}
+	25% {width: 12%;}
+	50% {width: 8%;}
+	75% {width: 4%;}
+	100% {width: 0%;}
 }
 
-@-webkit-keyframes slideNovo {
-	0% {
-		-webkit-transform: translateX(-150%);
-	}
-	50%{
-		-webkit-transform: translateX(8%);
-	}
-	65%{
-		-webkit-transform: translateX(-4%);
-	}
-	80%{
-		-webkit-transform: translateX(4%);
-	}
-	95%{
-		-webkit-transform: translateX(-2%);
-	}			
-	100% {
-		-webkit-transform: translateX(0%);
-	}
+@-webkit-keyframes deleteback {
+	0% {width: 16%;}
+	25% {width: 12%;}
+	50% {width: 8%;}
+	75% {width: 4%;}
+	100% {width: 0%;}
+}
+
+.reduceback{
+	background-color: yellow;
+	width: 100%;
+	height: 50px;
+	float: left;
+	display: inline-block;
+	animation-name: reduceback;
+	-webkit-animation-name: reduceback;	
+
+	animation-duration: 0.1s;	
+	-webkit-animation-duration: 0.1s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;	
+
+	visibility: visible !important;	
+}
+
+@keyframes reduceback {
+	0% {width: 84%;}
+	25% {width: 88%;}
+	50% {width: 92%;}
+	75% {width: 96%;}
+	100% {width: 100%;}
+}
+
+@-webkit-keyframes reduceback {
+	0% {width: 84%;}
+	25% {width: 88%;}
+	50% {width: 92%;}
+	75% {width: 96%;}
+	100% {width: 100%;}
 }
 
