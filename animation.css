@@ -1185,19 +1185,19 @@ Deslizar
 
 @keyframes delete {
 	0% {
-		transform: translateX(-100%);
+		width: 0%;
 	}
 	100% {
-		transform: translateX(0%);
+		width: 10%;
 	}
 }
 
 @-webkit-keyframes delete {
 	0% {
-		-webkit-transform: translateX(-100%);
+		width: 0%;
 	}
 	100% {
-		-webkit-transform: translateX(0%);
+		width: 10%;
 	}
 }
 
@@ -1221,19 +1221,19 @@ Deslizar
 
 @keyframes reduce {
 	0% {
-		transform: translateX(-10%);
+		width: 100%;
 	}
 	100% {
-		transform: translateX(0%);
+		width: 90%;
 	}
 }
 
 @-webkit-keyframes reduce {
 	0% {
-		-webkit-transform: translateX(-10%);
+		width: 100%;
 	}
 	100% {
-		-webkit-transform: translateX(0%);
+		width: 90%;
 	}
 }
 
