@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="animation.css" media="screen">
     <link rel="stylesheet" href="../assets/css/custom.min.css">
 
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
     <!--
@@ -178,14 +180,14 @@
 
       <div class="row">
         <div class="col-lg-12">
+          
           <div>
-            <a href="#" id="slideUpBtn" class="button">Slide Up &#8593;</a>
-            <a href="#" id="slideDownBtn" class="button">Slide Down &#8595;</a>       
-          </div>  
-          
-          <div class="esq" id="div1">Del</div>
-          <div class="dir" id="div2">Bebidas</div> 
-          
+            <div class="esq" id="div1" style="text-align: center;">
+              <span class="fa fa-trash-o fa-2x" style="color: #ffffff; vertical-align: middle;"></span>
+            </div>
+            <div class="dir" id="div2">Bebidas</div> 
+          </div>
+
         </div>
       </div>
 
@@ -211,24 +213,12 @@
 
         $('#div1').click(function() {
           $(this).each(function(){
-              $('#div1').removeClass(); 
-              $('#div1').addClass("deslizar");
+              $('#div2').removeClass();
+              $('#div1').removeClass();
+              $('#div2').addClass("dir");
+              $('#div1').addClass("esq");
             });
         });
-
-        $('#slideUpBtn').click(function() {
-          $(this).each(function(){
-              $('#div1').removeClass(); 
-              $('#div1').addClass("slideUp");
-            });
-        });
-
-        $('#slideDownBtn').click(function() {
-          $(this).each(function(){
-              $('#div1').removeClass();       
-              $('#div1').addClass("slideDown");
-            });
-        }); 
 
     </script>
 

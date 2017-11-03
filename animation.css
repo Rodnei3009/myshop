@@ -1239,6 +1239,7 @@ Deslizar
 	display: inline-block;
 	background-color: red;
 	float: left;
+	vertical-align: middle;
 }
 
 .dir {
@@ -1247,6 +1248,7 @@ Deslizar
 	display: inline-block;
 	background-color: yellow;
 	float: left;
+	vertical-align: middle;
 }
 
 
