@@ -146,21 +146,21 @@
             <div class="esq" id="Alimentos_esq" style="text-align: center;">
               <span class="fa fa-trash-o" style="color: #ffffff;"></span>
             </div>
-            <div class="dir" id="Alimentos_dir" onclick="reduce(this)">Alimentos</div> 
+            <div class="dir" id="Alimentos_dir" title="grd" onclick="reduce(this)">Alimentos</div> 
           </div>
 
           <div>
             <div class="esq" id="Bebidas_esq" style="text-align: center;">
               <span class="fa fa-trash-o" style="color: #ffffff;"></span>
             </div>
-            <div class="dir" id="Bebidas_dir" onclick="reduce(this)">Bebidas</div> 
+            <div class="dir" id="Bebidas_dir" title="grd" onclick="reduce(this)">Bebidas</div> 
           </div>
 
           <div>
             <div class="esq" id="Limpeza_esq" style="text-align: center;">
               <span class="fa fa-trash-o" style="color: #ffffff;"></span>
             </div>
-            <div class="dir" id="Limpeza_dir" onclick="reduce(this)">Limpeza</div> 
+            <div class="dir" id="Limpeza_dir" title="grd" onclick="reduce(this)">Limpeza</div> 
           </div>
 
         </div>
@@ -174,28 +174,27 @@
 
     <script>
 
-        var movement = 1;
-
         function reduce(obj_id) {
-            
+
             var id_obj_esq = obj_id.id.substring(0 , obj_id.id.length - 4) + "_esq"
 
             var obj_esq;
             obj_esq = document.getElementById(id_obj_esq);
 
-
-            if (movement === 1) {
+            if (obj_id.title === "grd") {
               movement = 0;
               $(obj_id).removeClass();
               $(obj_esq).removeClass();
               $(obj_id).addClass("reduce");
               $(obj_esq).addClass("delete");
+              obj_id.title = "peq";
             } else {
               movement = 1;
               $(obj_id).removeClass();
               $(obj_esq).removeClass();
               $(obj_id).addClass("reduceback");
               $(obj_esq).addClass("deleteback");
+              obj_id.title = "grd";
             }  
         }
 

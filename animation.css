@@ -1141,7 +1141,6 @@ Deslizar
 	display: inline-block;
 	vertical-align: middle;
 	line-height: 40px;
-	visibility: hidden;
 	margin-top: 3px;
 
 	animation-name: delete;
@@ -1249,7 +1248,7 @@ Deslizar
 	display: inline-block;
 	vertical-align: middle;
 	line-height: 40px;
-	visibility: hidden;
+	
 	margin-top: 3px;
 
 	animation-name: deleteback;
@@ -1259,7 +1258,9 @@ Deslizar
 	-webkit-animation-duration: 0.1s;
 
 	animation-timing-function: ease-in-out;	
-	-webkit-animation-timing-function: ease-in-out;		
+	-webkit-animation-timing-function: ease-in-out;
+
+	visibility: hidden;		
 
 }
 
