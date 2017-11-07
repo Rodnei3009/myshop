@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <title>Bootswatch: Cyborg</title>
@@ -7,11 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="bootstrap.css" media="screen">
     <link rel="stylesheet" href="animation.css" media="screen">
-    <link rel="stylesheet" href="../assets/css/custom.min.css">
 
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
 
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.3.0/angularfire.min.js"></script>
+    <script src="ang/app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
 
     <!--
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -41,7 +46,7 @@
 
     </script>
   </head>
-  <body>
+  <body ng-controller="categCtrl">
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -109,7 +114,6 @@
         -->
 
         <div class="row">
-          
           <div class="col-lg-6">
               <form>
                 <div class="form-group">
@@ -120,6 +124,9 @@
           </div>
         </div>
       </div>
+
+      {{name}}
+      <input type="text" ng-model="name" size="50">
 
       <div class="row">
         <div class="form-group">
@@ -137,30 +144,26 @@
             <h6 id="tables">Categorias cadastradas</h6>
           </div>
         </div>
-      </div>     
+      </div>
 
       <div class="row">
         <div class="col-lg-12">
           
-          <div>
-            <div class="esq" id="Alimentos_esq" style="text-align: center;">
+          <div ng-repeat="cat in categ">
+            <div class="esq" id={{cat.classe_esq}} style="text-align: center;">
               <span class="fa fa-trash-o" style="color: #ffffff;"></span>
             </div>
-            <div class="dir" id="Alimentos_dir" title="grd" onclick="reduce(this)">Alimentos</div> 
+            <div class="dir" id={{cat.classe_dir}} title="grd" onclick="reduce(this)">{{cat.item}}</div> 
           </div>
 
-          <div>
-            <div class="esq" id="Bebidas_esq" style="text-align: center;">
-              <span class="fa fa-trash-o" style="color: #ffffff;"></span>
-            </div>
-            <div class="dir" id="Bebidas_dir" title="grd" onclick="reduce(this)">Bebidas</div> 
-          </div>
+        </div>
+      </div>
 
-          <div>
-            <div class="esq" id="Limpeza_esq" style="text-align: center;">
-              <span class="fa fa-trash-o" style="color: #ffffff;"></span>
-            </div>
-            <div class="dir" id="Limpeza_dir" title="grd" onclick="reduce(this)">Limpeza</div> 
+      <div class="row">
+        <div class="col-lg-12">
+          
+          <div ng-repeat="cat in categ">
+            <div class="dir">{{cat}}</div> 
           </div>
 
         </div>
@@ -265,7 +268,7 @@
         $('.clear-page-alerts').click(function(e) {
             e.preventDefault();
             $('.page-alert').slideUp();
-        });z
+        });
 
     });
   </script>
