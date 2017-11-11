@@ -118,7 +118,7 @@
               <form>
                 <div class="form-group">
                   <label class="control-label" for="inputSmall">Nova Categoria</label>
-                  <input class="form-control input-sm" type="text" class="form-control" for="inputSmall" id="inputDefault" placeholder="Digite a descrição da categoria...">
+                  <input class="form-control input-sm" type="text" ng_model="myText" class="form-control" for="inputSmall" id="inputDefault" placeholder="Digite a descrição da categoria...">
                 </div>
               </form> 
           </div>
@@ -128,7 +128,7 @@
       <div class="row">
         <div class="form-group">
           <div class="col-lg-12">
-            <button type="submit" class="btn medio btn-primary btn-sm" data-toggle="page-alert" data-toggle-id="1">Salvar</button>
+            <button type="submit" class="btn medio btn-primary btn-sm" ng-click="salvar(myText)" data-toggle="page-alert" data-toggle-id="1">Salvar</button>
           </div>
         </div>        
       </div>
@@ -147,10 +147,10 @@
         <div class="col-lg-12">
           
           <div ng-repeat="cat in categ">
-            <div class="esq" id="{{cat + '_esq'}}" style="text-align: center;">
+            <div class="esq" id="{{cat.$value + '_esq'}}" ng-click="delet(cat)" style="text-align: center;">
               <span class="fa fa-trash-o" style="color: #ffffff;"></span>
             </div>
-            <div class="dir" id="{{cat + '_dir'}}" title="grd" onclick="reduce(this)">{{cat}}</div> 
+            <div class="dir" id="{{cat.$value + '_dir'}}" title="grd" onclick="reduce(this)">{{cat.$value}}</div> 
           </div>
 
         </div>
@@ -187,6 +187,10 @@
               obj_id.title = "grd";
             }  
         }
+
+        function del(categ_del) {
+          alert(categ_del.id.substring(0 , categ_del.id.length - 4));    
+        }  
 
     </script>
 

@@ -18,12 +18,38 @@ app.controller('categCtrl', function($scope, $firebaseObject, $firebaseArray) {
 
     var ref = firebase.database().ref('rodnei_brassoroto/categoria');
 
-    var obj = $firebaseObject(ref);
+    var obj_categ = $firebaseArray(ref);
 
-    obj.$bindTo($scope, "categ").then(function() {
-      console.log($scope.categ);
-    });
+    $scope.categ = obj_categ;
 
+    $scope.categ.$loaded()
+        .then(function() {
+            alert("XXX");
+        })
+        .catch(function(error) {
+            console.log("Error:", error);
+    });   
+    
+    
+    //DELETAR CATEGORIA    
+    $scope.delet = function(categ){
+        //alert(categ.$id);
+        //alert(categ.$value);
+        $scope.categ.$remove(categ).then(function(ref) {
+    
+        });    
+    };
+
+    //SALVAR CATEGORIA    
+    $scope.salvar = function(new_categ){
+        //alert(new_categ);
+        //alert(categ.$value);
+        
+        $scope.categ.$add({ $value: new_categ }).then(function(ref) {
+            
+        });    
+
+    };
 
     /*
     $scope.categ = [
