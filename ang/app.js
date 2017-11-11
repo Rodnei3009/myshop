@@ -1,7 +1,7 @@
 
 var app = angular.module('myApp', ["firebase"]); 
 
-app.controller('categCtrl', function($scope, $firebaseObject, $firebaseArray) {
+app.controller('categCtrl', function($scope, $firebaseObject, $firebaseArray) {  
 
     // Initialize Firebase
     var config = {
@@ -16,27 +16,14 @@ app.controller('categCtrl', function($scope, $firebaseObject, $firebaseArray) {
     firebase.initializeApp(config);
 
 
-    var ref = firebase.database().ref('rodnei_brassoroto');
+    var ref = firebase.database().ref('rodnei_brassoroto/categoria');
 
-    /*
-    $scope.name = $firebaseObject(ref);
+    var obj = $firebaseObject(ref);
 
-    ref.once("value", function(snapshot) {
-      snapshot.forEach(function(data) {
-        $scope.categ
-        alert(data.val());
-      });
+    obj.$bindTo($scope, "categ").then(function() {
+      console.log($scope.categ);
     });
-    */
 
-    $scope.categ = $firebaseArray(ref);
-
-    $scope.categ.$loaded()
-    .then(function(){
-        angular.forEach($scope.categ, function(cat) {
-            console.log(cat);
-        })
-    });
 
     /*
     $scope.categ = [
