@@ -93,10 +93,10 @@
           </div>
         </div>
 
-        <div class="page-alerts">
+        <div class="page-alerts" ng-show="show_message">
           <div class="alert alert-success page-alert" id="alert-1">
               <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-              <strong>Well done!</strong> You successfully read this important alert message.
+              <strong>{{msg}}</strong>
           </div>
         </div>
 
@@ -156,6 +156,8 @@
         </div>
       </div>
 
+      <br>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -188,15 +190,12 @@
             }  
         }
 
-        function del(categ_del) {
-          alert(categ_del.id.substring(0 , categ_del.id.length - 4));    
-        }  
-
     </script>
 
   </body>
 
   <script type="text/javascript">
+    /*
     $(function() {
         $('.page-alert').hide();
         //Show alert
@@ -232,6 +231,6 @@
             $('.page-alert').slideUp();
         });
 
-    });
+    }); */
   </script>
 </html>

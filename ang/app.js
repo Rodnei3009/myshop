@@ -3,6 +3,9 @@ var app = angular.module('myApp', ["firebase"]);
 
 app.controller('categCtrl', function($scope, $firebaseObject, $firebaseArray) {  
 
+    $scope.msg = "";
+    $scope.show_message = false;
+
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyAqZIC-iWcy5CSeBugOUkqUfbB9nNk-CI8",
@@ -15,7 +18,6 @@ app.controller('categCtrl', function($scope, $firebaseObject, $firebaseArray) {
 
     firebase.initializeApp(config);
 
-
     var ref = firebase.database().ref('rodnei_brassoroto/categoria');
 
     var obj_categ = $firebaseArray(ref);
@@ -24,7 +26,7 @@ app.controller('categCtrl', function($scope, $firebaseObject, $firebaseArray) {
 
     $scope.categ.$loaded()
         .then(function() {
-            alert("XXX");
+            //alert("XXX");
         })
         .catch(function(error) {
             console.log("Error:", error);
@@ -36,18 +38,38 @@ app.controller('categCtrl', function($scope, $firebaseObject, $firebaseArray) {
         //alert(categ.$id);
         //alert(categ.$value);
         $scope.categ.$remove(categ).then(function(ref) {
-    
+            //acrescentar codigo pra confirmar deleção
         });    
     };
 
     //SALVAR CATEGORIA    
     $scope.salvar = function(new_categ){
-        //alert(new_categ);
-        //alert(categ.$value);
         
-        $scope.categ.$add({ $value: new_categ }).then(function(ref) {
+        if (new_categ === "" || angular.isUndefined(new_categ)) {
+            $scope.show_message = true;
+            $scope.msg = "Descrição não pode estar em branco...";
+            return;
+        }
+        
+        var found = 0;
+
+        //verifica se ja existe
+        angular.forEach($scope.categ, function(categ) {
+            if (categ.$value == new_categ) {
+                found = 1;
+                $scope.show_message = true;
+                $scope.msg = "Categoria já existe...";
+                return;
+            }
+        }) 
+
+        if (found === 0) {
+            $scope.categ.$add({ $value: new_categ }).then(function(ref) {
+                //acrescentar codigo pra confirmar salvar
+                $scope.show_message = false;
+            });
+        }
             
-        });    
 
     };
 
