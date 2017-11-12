@@ -46,15 +46,15 @@ app.controller('categCtrl', function($scope, $firebaseObject, $firebaseArray) {
     //SALVAR CATEGORIA    
     $scope.salvar = function(new_categ){
 
+        //Verifica se categoria está em branco
         if (new_categ === "" || angular.isUndefined(new_categ)) {
             $scope.show_message = true;
             $scope.msg = "Descrição não pode estar em branco...";
             return;
         }
         
-        var found = 0;
-
         //verifica se ja existe
+        var found = 0;
         angular.forEach($scope.categ, function(categ) {
             if (categ.$value.toUpperCase() == new_categ.toUpperCase()) {
                 found = 1;
