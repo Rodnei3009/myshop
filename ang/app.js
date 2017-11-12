@@ -5,6 +5,7 @@ app.controller('categCtrl', function($scope, $firebaseObject, $firebaseArray) {
 
     $scope.msg = "";
     $scope.show_message = false;
+    $scope.show_spinner = true;
 
     // Initialize Firebase
     var config = {
@@ -26,7 +27,7 @@ app.controller('categCtrl', function($scope, $firebaseObject, $firebaseArray) {
 
     $scope.categ.$loaded()
         .then(function() {
-            //alert("XXX");
+            $scope.show_spinner = false;
         })
         .catch(function(error) {
             console.log("Error:", error);
@@ -44,7 +45,7 @@ app.controller('categCtrl', function($scope, $firebaseObject, $firebaseArray) {
 
     //SALVAR CATEGORIA    
     $scope.salvar = function(new_categ){
-        
+
         if (new_categ === "" || angular.isUndefined(new_categ)) {
             $scope.show_message = true;
             $scope.msg = "Descrição não pode estar em branco...";
@@ -55,7 +56,7 @@ app.controller('categCtrl', function($scope, $firebaseObject, $firebaseArray) {
 
         //verifica se ja existe
         angular.forEach($scope.categ, function(categ) {
-            if (categ.$value == new_categ) {
+            if (categ.$value.toUpperCase() == new_categ.toUpperCase()) {
                 found = 1;
                 $scope.show_message = true;
                 $scope.msg = "Categoria já existe...";

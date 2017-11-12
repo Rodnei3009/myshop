@@ -95,23 +95,12 @@
 
         <div class="page-alerts" ng-show="show_message">
           <div class="alert alert-success page-alert" id="alert-1">
+              <!--
               <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+              -->
               <strong>{{msg}}</strong>
           </div>
         </div>
-
-        <!--
-        <div class="row">
-          <div class="col-lg-12">
-            
-              <div class="alert alert-dismissible alert-danger">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <p>Descrição da categoria não pode estar em branco...</p>
-              </div>
-            
-          </div>
-        </div>
-        -->
 
         <div class="row">
           <div class="col-lg-6">
@@ -139,6 +128,14 @@
         <div class="col-lg-12">
           <div class="page-header">
             <h6 id="tables">Categorias cadastradas</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" ng-show="show_spinner">
+        <div class="col-lg-12">
+          <div style="text-align: center;">
+            <i class="fa fa-refresh fa-spin" style="font-size:35px;"></i>          
           </div>
         </div>
       </div>
