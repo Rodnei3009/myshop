@@ -1,5 +1,5 @@
 
-var app = angular.module('myApp', ["firebase"]); 
+var app = angular.module('CategApp', ["firebase"]); 
 
 app.controller('categCtrl', function($scope, $firebaseObject, $firebaseArray) {  
 
