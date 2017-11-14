@@ -84,9 +84,13 @@
 	
 	<icon src="img/cart5.png"            			gap:platform="ios"        width="300" height="300" />
 	<icon src="img/cart5 - 57.png"            		gap:platform="ios"        width="57" height="57" />
+	<icon src="img/cart5 - 72.png"            		gap:platform="ios"        width="72" height="72" />
 	<icon src="img/cart5 - 114.png"            		gap:platform="ios"        width="114" height="114" />
+	<icon src="img/cart5 - 144.png"            		gap:platform="ios"        width="144" height="144" />
 
 	<icon src="res/icon/ios/cart5.png"            	gap:platform="ios"        width="300" height="300" />
+	<icon src="res/icon/ios/cart5 - 57.png"         gap:platform="ios"        width="57" height="57" />
+	<icon src="res/icon/ios/cart5 - 114.png"        gap:platform="ios"        width="114" height="114" />
 	<!--
     <icon src="res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
     <icon src="res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
@@ -105,6 +109,7 @@
     <gap:splash src="res/screen/blackberry/screen-225.png"              gap:platform="blackberry" />
 	
 	<gap:splash src="img/cart5.png"         							gap:platform="ios"     width="300" height="300" />
+	<gap:splash src="res/screen/ios/cart5.png"         					gap:platform="ios"     width="300" height="300" />
     <!--
 	<gap:splash src="res/screen/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />
     <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
