@@ -1,0 +1,25 @@
+page-products-form {
+  ion-header {
+    ion-navbar {
+      ion-buttons {
+        ion-fab {
+          right: 0px !important;
+          margin-top: -21px !important;
+          top: 0px !important;
+
+          button {
+            margin: 0px !important;
+          }
+        }
+      }
+    }
+  }
+  form {
+    ion-select {
+      padding-lefT: 0px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      text-indent: 8px;
+    }
+  }
+}

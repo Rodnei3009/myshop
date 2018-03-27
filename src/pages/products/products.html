@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   (ionInput)="getProducts()"
+                   placeholder="Buscar">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items | async">
+      <ion-item (click)="setProduct(item)">
+        <ion-row>
+          <ion-col justify-content-start>
+            <strong>{{item.desc}}</strong>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row>
+          <ion-col justify-content-start col-5><strong>Tam:</strong> {{ item.tamanho }}</ion-col>
+          <ion-col justify-content-end col-3><strong>Cor:</strong> {{ item.cor }}</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col justify-content-end col-5><strong>Preço:</strong> {{ item.valVenda }}</ion-col>
+          <ion-col justify-content-start col-3><strong>Marca:</strong> {{ item.marca }}</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col justify-content-start col-5><strong>Disp.:</strong> {{ item.qtd_disp }}</ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item-options side="right">
+          <button ion-button color="danger" icon-only (click)="deleteProduct(item)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab bottom right #fab>
+    <button ion-fab (click)="newProduct()"><ion-icon name="md-add"></ion-icon></button>
+  </ion-fab>
+</ion-content>
