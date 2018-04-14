@@ -706,6 +706,7 @@ var ProductsFormPage = (function () {
             _this.barcode = _this.barcodeResult.text;
             _this.form.patchValue({ 'codBarras': _this.barcode });
         }).catch(function (error) {
+            alert(error);
             console.log('barcode error: ', error);
         });
     };
