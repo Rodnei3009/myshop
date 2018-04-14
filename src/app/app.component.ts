@@ -80,6 +80,7 @@ export class ConferenceApp {
     }
   }
 
+  
   platformReady() {
     this.platform.ready().then(() => {
       this.splashScreen.hide();

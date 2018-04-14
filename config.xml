@@ -105,8 +105,4 @@
     <plugin name="cordova-plugin-contacts" spec="^3.0.1" />
     <plugin name="cordova-plugin-x-socialsharing" spec="^5.3.2" />
     
-    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
-        <string>Camera Davisa</string>
-    </edit-config>
-
 </widget>
