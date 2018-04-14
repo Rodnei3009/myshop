@@ -93,7 +93,10 @@
       "phonegap-plugin-barcodescanner": {},
       "cordova-plugin-datepicker": {},
       "cordova-plugin-contacts": {},
-      "cordova-plugin-x-socialsharing": {}
+      "cordova-plugin-x-socialsharing": {},
+      "cordova-plugin-camera": {
+        "CAMERA_USAGE_DESCRIPTION": "Davisa"
+      }
     }
   }
 }

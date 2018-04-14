@@ -91,11 +91,6 @@
         <variable name="XWALK_MODE" value="embedded" />
         <variable name="XWALK_MULTIPLEAPK" value="true" />
     </plugin>
-    
-    <plugin name="cordova-plugin-media-capture" source="npm" spec="*">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="Davisa would like to access the camera." />
-    </plugin>
-    
     <plugin name="cordova-plugin-device" spec="^1.1.7" />
     <plugin name="cordova-plugin-inappbrowser" spec="^1.7.2" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.1.0" />
@@ -109,4 +104,7 @@
     <plugin name="cordova-plugin-contacts" spec="^3.0.1" />
     <plugin name="cordova-plugin-x-socialsharing" spec="^5.3.2" />
     <engine name="ios" spec="~4.5.2" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.2">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="Davisa" />
+    </plugin>
 </widget>
