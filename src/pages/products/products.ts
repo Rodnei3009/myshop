@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { AlertController, App, NavController, ToastController, LoadingController, Refresher } from 'ionic-angular';
+import { AlertController, App, NavController, NavParams, ToastController, LoadingController, ViewController, Refresher } from 'ionic-angular';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -14,6 +14,7 @@ import { ProductsFormPage } from './../products-form/products-form';
   templateUrl: 'products.html'
 })
 export class ProductsPage {
+  modal: Boolean = false;
   queryText = '';
 
   items: Observable<any[]>;
@@ -26,9 +27,13 @@ export class ProductsPage {
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
     public navCtrl: NavController,
+    public viewCtrl: ViewController,
+    public navParams: NavParams,
 
     public products: Products
-  ) { }
+  ) {
+    this.modal = this.navParams.get('modal');
+  }
 
   presentLoading() {
     this.loading = this.loadingCtrl.create({
@@ -68,6 +73,12 @@ export class ProductsPage {
   }
 
   setProduct(product) {
+    if(this.modal) {
+      this.dismiss(product);
+
+      return false;
+    }
+
     this.navCtrl.push(ProductsFormPage, { data: product, edit: true });
   }
 
@@ -77,5 +88,9 @@ export class ProductsPage {
 
   deleteProduct(product) {
     this.products.deleteProduct(product);
+  }
+
+  dismiss(data) {
+    this.viewCtrl.dismiss(data);
   }
 }

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar no-border-bottom>
     <button ion-button menuToggle>
-      <ion-icon name="md-menu"></ion-icon>
+      <ion-icon color="primary" name="md-menu"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
@@ -9,65 +9,75 @@
 <ion-content>
   <form [formGroup]="form" (ngSubmit)="onSubmit(); $event.preventDefault()">
     <ion-item>    
-      <ion-icon name="md-person" item-left></ion-icon>
-      <ion-input type="text" placeholder="Nome" formControlName="nome"></ion-input>
+      <ion-icon color="primary" name="md-person" item-left></ion-icon>
+      <ion-label color="primary" floating>Nome</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-icon name="md-phone-portrait" item-left></ion-icon>
-      <ion-input type="tel" placeholder="Celular" formControlName="celular"></ion-input>
+      <ion-icon color="primary" name="md-phone-portrait" item-left></ion-icon>
+      <ion-label color="primary" floating>Celular</ion-label>
+      <ion-input type="tel" formControlName="celular"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-icon name="md-at" item-left></ion-icon>
-      <ion-input type="text" placeholder="E-mail" formControlName="email"></ion-input>
+      <ion-icon color="primary" name="md-at" item-left></ion-icon>
+      <ion-label color="primary" floating>E-mail</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-icon name="md-body" item-left></ion-icon>
-      <ion-select interface="action-sheet" placeholder="Sexo" formControlName="sexo">
+      <ion-icon color="primary" name="md-body" item-left></ion-icon>
+      <ion-label color="primary" floating>Sexo</ion-label>
+      <ion-select interface="action-sheet" formControlName="sexo">
         <ion-option value="F">Feminino</ion-option>
         <ion-option value="M">Masculino</ion-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
-      <ion-icon name="md-construct" item-left></ion-icon>
-      <ion-input type="text" placeholder="Profissão" formControlName="prof"></ion-input>
+      <ion-icon color="primary" name="md-construct" item-left></ion-icon>
+      <ion-label color="primary" floating>Profissão</ion-label>
+      <ion-input type="text" formControlName="prof"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-icon name="md-contacts" item-left></ion-icon>
-      <ion-input type="text" placeholder="Estado Civil" formControlName="estcivil"></ion-input>
+      <ion-icon color="primary" name="md-contacts" item-left></ion-icon>
+      <ion-label color="primary" floating>Estado Civil</ion-label>
+      <ion-input type="text" formControlName="estcivil"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-icon name="md-hand" item-left></ion-icon>
-      <ion-input type="text" placeholder="Aniversário" formControlName="aniver" (focus)="getBirthdayPicker()" ></ion-input>
+      <ion-icon color="primary" name="md-calendar" item-left></ion-icon>
+      <ion-label color="primary" floating>Aniversário</ion-label>
+      <ion-input type="text" formControlName="aniver" (focus)="getBirthdayPicker()" ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-icon name="md-card" item-left></ion-icon>
-      <ion-input type="number" placeholder="CPF" formControlName="CPF"></ion-input>
+      <ion-icon color="primary" name="md-card" item-left></ion-icon>
+      <ion-label color="primary" floating>CPF</ion-label>
+      <ion-input type="number" formControlName="CPF"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-icon name="md-finger-print" item-left></ion-icon>
-      <ion-input type="number" placeholder="RG" formControlName="RG"></ion-input>
+      <ion-icon color="primary" name="md-finger-print" item-left></ion-icon>
+      <ion-label color="primary" floating>RG</ion-label>
+      <ion-input type="number" formControlName="RG"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-icon name="md-home" item-left></ion-icon>
-      <ion-input type="text" placeholder="Endereço" formControlName="endereco"></ion-input>
+      <ion-icon color="primary" name="md-home" item-left></ion-icon>
+      <ion-label color="primary" floating>Endereço</ion-label>
+      <ion-input type="text" formControlName="endereco"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-icon name="md-infinite" item-left></ion-icon>
-      <ion-input type="text" placeholder="Complemento" formControlName="complemento"></ion-input>
+      <ion-icon color="primary" name="md-infinite" item-left></ion-icon>
+      <ion-label color="primary" floating>Complemento</ion-label>
+      <ion-input type="text" formControlName="complemento"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-icon name="md-information-circle" item-left></ion-icon>
-      <ion-input type="text" placeholder="Indicação" formControlName="indicacao"></ion-input>
+      <ion-icon color="primary" name="md-information-circle" item-left></ion-icon>
+      <ion-label color="primary" floating>Indicação</ion-label>
+      <ion-input type="text" formControlName="indicacao"></ion-input>
     </ion-item>
-    
-    <ion-row>
-      <ion-col>
-        <button ion-button block type="button" [disabled]="form.invalid" color="primary" (click)="onSubmit()">Salvar</button>
-      </ion-col>
-    </ion-row>
   </form>
+
+  <ion-fab bottom right #fab>
+    <button ion-fab (click)="onSubmit()" [disabled]="form.invalid"><ion-icon name="md-checkmark"></ion-icon></button>
+  </ion-fab>
 </ion-content>

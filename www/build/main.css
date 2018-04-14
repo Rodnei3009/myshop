@@ -39902,28 +39902,192 @@ page-customers ion-list ion-item ion-icon {
   color: #8E8D93;
 }
 
-page-customers-form form ion-select {
-  padding-lefT: 0px !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  text-indent: 8px;
+page-customers-form form ion-icon {
+  font-size: 45px !important;
+  margin: 0px !important;
+  margin-right: 5px !important;
+  width: 50px !important;
 }
 
-page-products-form ion-header ion-navbar ion-buttons ion-fab {
-  right: 0px !important;
-  margin-top: -21px !important;
+page-customers-form form ion-select {
+  padding-left: 0px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  text-indent: 5px;
+}
+
+page-customers-form form ion-item {
+  padding-left: 5px !important;
+  padding-bottom: 15px !important;
+  padding-top: 15px !important;
+  border-bottom: #8E8D93 0.5px solid !important;
+}
+
+page-customers-form form ion-item .item-inner {
+  border-bottom: 0px none !important;
+  margin-top: -7px !important;
+}
+
+page-customers-form form ion-item.item-input-has-focus ion-label,
+page-customers-form form ion-item.item-input-has-value ion-label {
   top: 0px !important;
 }
 
-page-products-form ion-header ion-navbar ion-buttons ion-fab button {
+page-customers-form form ion-item.item-input-has-focus .item-inner,
+page-customers-form form ion-item.item-input-has-value .item-inner {
+  border-bottom: 0px none !important;
+  margin-top: 0px !important;
+}
+
+page-customers-form form ion-label {
+  text-transform: uppercase !important;
+  top: -7px !important;
+  margin: 0px !important;
+  position: relative !important;
+}
+
+page-customers-form form ion-input {
+  font-size: 20px !important;
+  text-transform: uppercase !important;
+}
+
+page-customers-form form ion-input input {
   margin: 0px !important;
 }
 
+page-customers-form form .select-text {
+  text-transform: uppercase !important;
+  text-indent: 0px !important;
+  padding: 0px !important;
+}
+
+page-customers-form form .select-icon {
+  top: -7px !important;
+}
+
+page-orders ion-list ion-item {
+  border-left-style: solid !important;
+  border-left-width: 2px !important;
+  padding-left: 0px !important;
+  text-indent: 10px !important;
+}
+
+page-orders ion-list ion-item ion-icon {
+  color: #8E8D93;
+}
+
+page-orders-form ion-row ion-col {
+  padding: 0px !important;
+  text-align: center !important;
+}
+
+page-orders-form button {
+  margin: 0px auto !important;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+}
+
+page-orders-form ion-list {
+  padding: 0px 10px !important;
+}
+
+page-orders-form .text-align-left {
+  text-align: left !important;
+}
+
+page-orders-form .text-align-left ion-row ion-col {
+  text-align: left !important;
+}
+
+page-orders-form ion-item-options {
+  width: auto !important;
+  text-align: center !important;
+}
+
+page-orders-form ion-item-options button {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+page-products ion-list ion-item {
+  border-left: #8E8D93 2px solid !important;
+  padding-left: 0px !important;
+  text-indent: 10px !important;
+}
+
+page-products ion-list ion-item ion-icon {
+  color: #8E8D93;
+}
+
+page-products-form form ion-icon {
+  font-size: 45px !important;
+  margin: 0px !important;
+  margin-right: 5px !important;
+  width: 50px !important;
+}
+
+page-products-form form ion-grid {
+  padding: 0px !important;
+}
+
 page-products-form form ion-select {
-  padding-lefT: 0px !important;
+  padding-left: 0px !important;
   width: 100% !important;
   max-width: 100% !important;
-  text-indent: 8px;
+  text-indent: 5px;
+}
+
+page-products-form form ion-item {
+  padding-left: 5px !important;
+  padding-bottom: 15px !important;
+  padding-top: 15px !important;
+  border-bottom: #8E8D93 0.5px solid !important;
+}
+
+page-products-form form ion-item .item-inner {
+  border-bottom: 0px none !important;
+  margin-top: -7px !important;
+}
+
+page-products-form form ion-item.item-input-has-focus ion-label,
+page-products-form form ion-item.item-input-has-value ion-label {
+  top: 0px !important;
+}
+
+page-products-form form ion-item.item-input-has-focus .item-inner,
+page-products-form form ion-item.item-input-has-value .item-inner {
+  border-bottom: 0px none !important;
+  margin-top: 0px !important;
+}
+
+page-products-form form ion-label {
+  text-transform: uppercase !important;
+  top: -7px !important;
+  margin: 0px !important;
+  position: relative !important;
+}
+
+page-products-form form ion-input {
+  font-size: 20px !important;
+  text-transform: uppercase !important;
+}
+
+page-products-form form ion-input input {
+  margin: 0px !important;
+}
+
+page-products-form form .select-text {
+  text-transform: uppercase !important;
+  text-indent: 0px !important;
+  padding: 0px !important;
+}
+
+page-products-form form .select-icon {
+  top: -7px !important;
+}
+
+page-products-form form .col {
+  padding: 0px !important;
 }
 
 .tabbar {

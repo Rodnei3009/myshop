@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>Pedido #{{ orderId }}</ion-list-header>
+    <ion-item-group>
+      <ion-item>Cliente: {{ orderCustomerName }}</ion-item>
+      <ion-item>Data / Hora: {{ orderDate }}</ion-item>
+      <ion-item>Celular: {{ orderCustomerCellphone }}</ion-item>
+    </ion-item-group>
+  </ion-list>
+  
+  <ion-list>
+    <ion-list-header>Lista de produtos</ion-list-header>
+    <ion-item-sliding *ngFor="let item of orderProductsList">
+      <ion-item>
+        <ion-row>
+          <ion-col justify-content-start>
+            <strong>{{ item[1].desc }}</strong>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row>
+          <ion-col justify-content-start col-5><strong>Tam:</strong> {{ item[1].tamanho }}</ion-col>
+          <ion-col justify-content-end col-3><strong>Cor:</strong> {{ item[1].cor }}</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col justify-content-end col-5><strong>Preço:</strong> R$ {{ item[1].valVenda }}</ion-col>
+          <ion-col justify-content-start col-3><strong>Marca:</strong> {{ item[1].marca }}</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col justify-content-start col-5><strong>Qtde.:</strong> {{ item[1].qtd_pedido }}</ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>Total</ion-list-header>
+    <ion-item-group>
+      <ion-item>R$ {{ orderTotalCosts }}</ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

@@ -1,25 +1,76 @@
 page-products-form {
-  ion-header {
-    ion-navbar {
-      ion-buttons {
-        ion-fab {
-          right: 0px !important;
-          margin-top: -21px !important;
-          top: 0px !important;
-
-          button {
-            margin: 0px !important;
-          }
-        }
-      }
-    }
-  }
   form {
+    ion-icon {
+      font-size: 45px !important;
+      margin: 0px !important;
+      margin-right: 5px !important;
+      width: 50px !important;
+    }
+
+    ion-grid {
+      padding: 0px !important;
+    }
+
     ion-select {
-      padding-lefT: 0px !important;
+      padding-left: 0px !important;
       width: 100% !important;
       max-width: 100% !important;
-      text-indent: 8px;
+      text-indent: 5px;
+    }
+
+    ion-item {
+      padding-left: 5px !important;
+      padding-bottom: 15px !important;
+      padding-top: 15px !important;
+
+      border-bottom: $primary-color .5px solid !important;
+
+      .item-inner {
+        border-bottom: 0px none !important;
+        margin-top: -7px !important;
+      }
+    }
+
+    ion-item.item-input-has-focus,
+    ion-item.item-input-has-value {
+      ion-label {
+        top: 0px !important;
+      }
+
+      .item-inner {
+        border-bottom: 0px none !important;
+        margin-top: 0px !important;
+      }
+    }
+
+    ion-label {
+      text-transform: uppercase !important;
+      top: -7px !important;
+      margin: 0px !important;
+      position: relative !important;
+    }
+
+    ion-input {
+      font-size: 20px !important;
+      text-transform: uppercase !important;
+
+      input {
+        margin: 0px !important;
+      }
+    }
+
+    .select-text {
+      text-transform: uppercase !important;
+      text-indent: 0px !important;
+      padding: 0px !important; 
+    }
+
+    .select-icon {
+      top: -7px !important;
+    }
+
+    .col {
+      padding: 0px !important;
     }
   }
 }

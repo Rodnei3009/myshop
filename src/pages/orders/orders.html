@@ -20,16 +20,21 @@
   </ion-refresher>
 
   <ion-list>
-    <ion-item-group *ngFor="let item of items | async">
+    <ion-item-sliding *ngFor="let item of ordersList | async">
       <ion-item detail-push (click)="setOrder(item)">
         <ion-label>
-          {{item.nome}}
+          <strong>#{{ item.numPedido }}</strong> {{ item.date }} - {{ item.nomCliente }}
         </ion-label>
       </ion-item>
-    </ion-item-group>
+      <ion-item-options side="right">
+        <button ion-button color="danger" icon-only (click)="deleteOrder(item)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 
   <ion-fab bottom right #fab>
-    <button ion-fab><ion-icon name="md-add"></ion-icon></button>
+    <button ion-fab (click)="newOrder()"><ion-icon name="md-add"></ion-icon></button>
   </ion-fab>
 </ion-content>

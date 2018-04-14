@@ -23,8 +23,8 @@ export class CustomersFormPage {
     public alertCtrl: AlertController,
     public app: App,
     public loadingCtrl: LoadingController,
-    public navCtrl: NavController, 
-    public navParams: NavParams, 
+    public navCtrl: NavController,
+    public navParams: NavParams,
     public formBuilder: FormBuilder,
     public datePicker: DatePicker,
 
@@ -53,8 +53,6 @@ export class CustomersFormPage {
     } else {
       this.customerId = '';
     }
-
-    console.log(this.customerId);
   }
 
   ionViewDidLoad() {

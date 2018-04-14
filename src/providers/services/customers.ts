@@ -15,29 +15,56 @@ export class Customers {
   public getCustomers (query) {
     this.itemsRef = this.firebase.list('/clientes/', ref => ref.orderByChild('nome'));
 
-    this.items = query ? (
-      this.itemsRef.snapshotChanges().map(changes => {
-        const item = changes.filter(subItem => ((subItem.payload.val().nome.toLowerCase().includes(query.toLowerCase())) && !subItem.payload.val().delete));
+    if(query) {
+      if((typeof query) == 'string') {
+        query = [ query.toLowerCase(), '' ];
+      }
 
-        return item.map(c => {
+      if((typeof query) == 'object') {
+        if(query[0]) query[0] = query[0].toLowerCase();
+        if(query[1]) query[1] = query[1].toLowerCase();
+      }
+    }
+
+    this.items = query.length >= 1 ? (
+      this.itemsRef.snapshotChanges().map(changes => {
+        let item = changes.filter(subItem => {
+          let response = false;
+
+          if(query[0] && subItem.payload.val().nome.toLowerCase().includes(query[0]) && !subItem.payload.val().delete){
+            response = true;
+          }
+
+          if(query[1] && subItem.payload.val().celular.toLowerCase().includes(query[1]) && !subItem.payload.val().delete){
+            response = true;
+          }
+
+          return response;
+        });
+
+        const newItem = item.map(c => {
           const payload = Object.assign({}, c.payload.val(), {});
 
-          payload.nome = payload.nome.toUpperCase();
+          payload.nome = payload.nome ? payload.nome.toUpperCase() : '';
 
           return ({ key: c.payload.key, ...payload })
         });
+
+        return newItem;
       })
     ) : (
       this.itemsRef.snapshotChanges().map(changes => {
         const item = changes.filter(subItem => !subItem.payload.val().delete);
 
-        return item.map(c => {
+        const newItem = item.map(c => {
           const payload = Object.assign({}, c.payload.val(), {});
 
-          payload.nome = payload.nome.toUpperCase();
+          payload.nome = payload.nome ? payload.nome.toUpperCase() : '';
 
           return ({ key: c.payload.key, ...payload })
-        })
+        });
+
+        return newItem;
       })
     );
 

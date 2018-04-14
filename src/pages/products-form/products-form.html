@@ -17,91 +17,73 @@
 <ion-content>
   <form [formGroup]="form" (ngSubmit)="onSubmit(); $event.preventDefault()">
     <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-icon name="md-barcode" item-left></ion-icon>
-            <ion-input type="text" placeholder="Código de barras" formControlName="codBarras"></ion-input>  
-          </ion-item>
-        </ion-col>
-      </ion-row>
+      <ion-item>
+        <ion-icon color="primary" name="md-barcode" item-left></ion-icon>
+        <ion-label color="primary" floating>Código de barras</ion-label>
+        <ion-input type="text" formControlName="codBarras"></ion-input>  
+      </ion-item>
+
+      <ion-item>
+        <ion-icon color="primary" name="md-shirt" item-left></ion-icon>
+        <ion-label color="primary" floating>Produto</ion-label>
+        <ion-input type="text" formControlName="desc"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon color="primary" name="md-information-circle" item-left></ion-icon>
+        <ion-label color="primary" floating>Código</ion-label>
+        <ion-input type="text" formControlName="codigo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon color="primary" name="md-pricetag" item-left></ion-icon>
+        <ion-label color="primary" floating>Marca</ion-label>
+        <ion-select interface="action-sheet" formControlName="marca">
+          <ion-option value="DeMillus">DeMillus</ion-option>
+          <ion-option value="Valisere">Valisére</ion-option>
+          <ion-option value="ValFrance">ValFrance</ion-option>
+          <ion-option value="Toque Intimo">Toque Íntimo</ion-option>
+        </ion-select>
+      </ion-item>
 
       <ion-row>
         <ion-col>
           <ion-item>
-            <ion-icon name="md-shirt" item-left></ion-icon>
-            <ion-input type="text" placeholder="Produto" formControlName="desc"></ion-input>
+            <ion-icon color="primary" name="md-color-palette" item-left></ion-icon>
+            <ion-label color="primary" floating>Cor</ion-label>
+            <ion-input type="text" formControlName="cor"></ion-input>  
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-icon color="primary" name="md-expand" item-left></ion-icon>
+            <ion-label color="primary" floating>Tamanho</ion-label>
+            <ion-input type="text" formControlName="tamanho"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
 
-      <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-icon name="md-information-circle" item-left></ion-icon>
-            <ion-input type="text" placeholder="Código" formControlName="codigo"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
+      <ion-item>
+        <ion-icon color="primary" name="md-calculator" item-left></ion-icon>
+        <ion-label color="primary" floating>Valor compra</ion-label>
+        <ion-input type="number" formControlName="valCompra"></ion-input>
+      </ion-item>
 
-      <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-icon name="md-pricetag" item-left></ion-icon>
-            <ion-select interface="action-sheet" placeholder="Marca" formControlName="marca">
-              <ion-option value="DeMillus">DeMillus</ion-option>
-              <ion-option value="Valisere">Valisére</ion-option>
-              <ion-option value="ValFrance">ValFrance</ion-option>
-              <ion-option value="Toque Intimo">Toque Íntimo</ion-option>
-            </ion-select>
-          </ion-item>
-        </ion-col>
-      </ion-row>
+      <ion-item>
+        <ion-icon color="primary" name="md-calculator" item-left></ion-icon>
+        <ion-label color="primary" floating>Valor venda</ion-label>
+        <ion-input type="number" formControlName="valVenda"></ion-input>
+      </ion-item>
 
-      <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-icon name="md-color-palette" item-left></ion-icon>
-            <ion-input type="text" placeholder="Cor" formControlName="cor"></ion-input>  
-          </ion-item>
-        </ion-col>
-        <ion-col>
-          <ion-item>
-            <ion-icon name="md-expand" item-left></ion-icon>
-            <ion-input type="text" placeholder="Tamanho" formControlName="tamanho"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-icon name="md-calculator" item-left></ion-icon>
-            <ion-input type="number" placeholder="Valor compra" formControlName="valCompra"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col>
-          <ion-item>
-            <ion-icon name="md-calculator" item-left></ion-icon>
-            <ion-input type="number" placeholder="Valor venda" formControlName="valVenda"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-icon name="md-archive" item-left></ion-icon>
-            <ion-input type="number" placeholder="Quantidade" formControlName="qtd_disp"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col></ion-col>
-      </ion-row>
+      <ion-item>
+        <ion-icon color="primary" name="md-archive" item-left></ion-icon>
+        <ion-label color="primary" floating>Quantidade</ion-label>
+        <ion-input type="number" formControlName="qtd_disp"></ion-input>
+      </ion-item>
     </ion-grid>
-
-    <ion-row>
-      <ion-col>
-        <button ion-button block type="button" [disabled]="form.invalid" color="primary" (click)="onSubmit()">Salvar</button>
-      </ion-col>
-    </ion-row>
   </form>
+
+  <ion-fab bottom right #fab>
+    <button ion-fab (click)="onSubmit()" [disabled]="form.invalid"><ion-icon name="md-checkmark"></ion-icon></button>
+  </ion-fab>
 </ion-content>

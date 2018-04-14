@@ -13,6 +13,7 @@ import { ProductsPage } from '../pages/products/products';
 import { TabsPage } from '../pages/tabs-page/tabs-page'
 
 import { UserData } from '../providers/user-data';
+//import { UserData } from '../providers/user-data';
 
 import { Customers } from '../providers/services/customers';
 import { Orders } from '../providers/services/orders';

@@ -10,7 +10,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DatePicker } from '@ionic-native/date-picker';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { Contacts } from '@ionic-native/contacts'
 import { IonicStorageModule } from '@ionic/storage';
 
 import { AngularFireModule } from 'angularfire2';
@@ -23,6 +24,8 @@ import { CustomersPage } from '../pages/customers/customers';
 import { CustomersFormPage } from '../pages/customers-form/customers-form';
 
 import { OrdersPage } from '../pages/orders/orders';
+import { OrdersFormPage } from '../pages/orders-form/orders-form';
+import { OrdersViewPage } from '../pages/orders-view/orders-view';
 
 import { ProductsPage } from '../pages/products/products';
 import { ProductsFormPage } from '../pages/products-form/products-form';
@@ -50,6 +53,8 @@ export const firebaseConfig = {
     CustomersPage,
     CustomersFormPage,
     OrdersPage,
+    OrdersFormPage,
+    OrdersViewPage,
     ProductsPage,
     ProductsFormPage
   ],
@@ -66,6 +71,8 @@ export const firebaseConfig = {
         { component: CustomersPage, name: 'Customers', segment: 'customers' },
         { component: CustomersFormPage, name: 'CustomersForm', segment: 'customers-new' },
         { component: OrdersPage, name: 'Orders', segment: 'orders' },
+        { component: OrdersFormPage, name: 'OrdersForm', segment: 'orders-new' },
+        { component: OrdersViewPage, name: 'OrdersView', segment: 'orders-view' },
         { component: ProductsPage, name: 'Products', segment: 'products' },
         { component: ProductsFormPage, name: 'ProductsForm', segment: 'products-new' }
       ]
@@ -78,6 +85,8 @@ export const firebaseConfig = {
     CustomersPage,
     CustomersFormPage,
     OrdersPage,
+    OrdersViewPage,
+    OrdersFormPage,
     ProductsPage,
     ProductsFormPage,
     TabsPage
@@ -87,13 +96,14 @@ export const firebaseConfig = {
     Orders,
     Products,
     BarcodeScanner,
-    
     UserData,
     InAppBrowser,
     SplashScreen,
     DatePicker,
     AngularFireDatabase,
-    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    SocialSharing,
+    Contacts,
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
 export class AppModule { }

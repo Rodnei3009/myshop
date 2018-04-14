@@ -17,12 +17,16 @@ export class Products {
 
     this.items = query ? (
       this.itemsRef.snapshotChanges().map(changes => {
-        const item = changes.filter(subItem => ((subItem.payload.val().desc.toLowerCase().includes(query.toLowerCase()) || subItem.payload.val().marca.toLowerCase().includes(query.toLowerCase())) && !subItem.payload.val().delete));
+        const item = changes.filter(subItem => ((subItem.payload.val().desc.toLowerCase().includes(query.toLowerCase()) ||
+          subItem.payload.val().marca.toLowerCase().includes(query.toLowerCase()) ||
+          subItem.payload.val().codBarras.includes(query)) &&
+          !subItem.payload.val().delete)
+        );
 
         return item.map(c => {
           const payload = Object.assign({}, c.payload.val(), {});
 
-          payload.desc = payload.desc.toUpperCase();
+          payload.desc = payload.desc ? payload.desc.toUpperCase() : '';
 
           return ({ key: c.payload.key, ...payload })
         });
@@ -34,7 +38,7 @@ export class Products {
         return item.map(c => {
           const payload = Object.assign({}, c.payload.val(), {});
 
-          payload.desc = payload.desc.toUpperCase();
+          payload.desc = payload.desc ? payload.desc.toUpperCase() : '';
 
           return ({ key: c.payload.key, ...payload })
         })

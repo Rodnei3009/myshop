@@ -10,21 +10,29 @@ export class Orders {
   itemsRef: AngularFireList<any>;
   items: Observable<any[]>;
 
+  list: any = '/pedidos/';
+
   constructor(public firebase: AngularFireDatabase) { }
 
   public getOrders (query) {
-    this.itemsRef = this.firebase.list('/pedidos/', ref => ref);
+    this.itemsRef = this.firebase.list(this.list, ref => ref);
 
     this.items = query ? (
       this.itemsRef.snapshotChanges().map(changes => {
-        const item = changes.filter(subItem => ((subItem.payload.val().nome.toLowerCase().includes(query.toLowerCase())) && !subItem.payload.val().delete));
+        const item = changes.filter(subItem => ((subItem.payload.val().nomCliente.toLowerCase().includes(query.toLowerCase())) && !subItem.payload.val().delete));
 
         return item.map(c => {
           const payload = Object.assign({}, c.payload.val(), {});
 
-          payload.desc = payload.desc.toUpperCase();
+          payload.nomCliente = payload.nomCliente ? payload.nomCliente.toUpperCase() : '';
+          
+          const dateTime = payload.dataHora.split(' - ');
+          const time = dateTime[0].split(':');
+          const date = dateTime[1].split('/');
+          const createdAt = new Date(date[2] + '-' + date[1] + '-' + date[0] + ' ' + time[0] + ':' + time[1]);
 
-          console.log(payload);
+          payload.date = dateTime[0];
+          payload.createdAt = createdAt;
 
           return ({ key: c.payload.key, ...payload })
         });
@@ -36,9 +44,18 @@ export class Orders {
         return item.map(c => {
           const payload = Object.assign({}, c.payload.val(), {});
 
-          payload.desc = payload.desc.toUpperCase();
+          payload.nomCliente = payload.nomCliente ? payload.nomCliente.toUpperCase() : '';
 
-          console.log(payload);
+          const dateTime = payload.dataHora.split(' - ');
+          if(dateTime.length > 1) {
+            const time = dateTime[0].split(':');
+            const date = dateTime[1].split('/');
+            const createdAt = new Date(date[2] + '-' + date[1] + '-' + date[0] + ' ' + time[0] + ':' + time[1]);
+
+            payload.createdAt = createdAt;
+          }
+          
+          payload.date = dateTime[0];
 
           return ({ key: c.payload.key, ...payload })
         })
@@ -46,5 +63,23 @@ export class Orders {
     );
 
     return this.items;
+  }
+
+  public postOrder (order) {
+    this.firebase.list(this.list).push(order);
+  }
+
+  public deleteOrder (order) {
+    const date = new Date();
+    const time = date.getFullYear() + "-" + String(date.getMonth() + 1) + "-" + date.getDate() + " " + String(date.getHours() + 1) + ":" + String(date.getMinutes() + 1) + ":" + String(date.getSeconds() + 1);
+
+    const deleted = Object.assign({}, order, { delete: {
+      'userName': 'Davisa',
+      'createdAt': time
+    } });
+
+    const key = order.key || '0112358132134558914423337761098715972584';
+
+    this.firebase.list(this.list).update(key, deleted);
   }
 }

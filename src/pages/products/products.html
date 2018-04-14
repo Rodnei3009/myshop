@@ -1,7 +1,11 @@
 <ion-header>
   <ion-navbar no-border-bottom>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+    <button *ngIf="!modal" ion-button menuToggle>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+
+    <button *ngIf="modal" ion-button (click)="dismiss()">
+      <ion-icon name="md-close"></ion-icon>
     </button>
   </ion-navbar>
 
@@ -21,32 +25,28 @@
 
   <ion-list>
     <ion-item-sliding *ngFor="let item of items | async">
-      <ion-item (click)="setProduct(item)">
-        <ion-row>
-          <ion-col justify-content-start>
-            <strong>{{item.desc}}</strong>
-          </ion-col>
-        </ion-row>
+      <ion-item detail-push (click)="setProduct(item)">
+        <h3>{{item.desc}}</h3>
         
         <ion-row>
-          <ion-col justify-content-start col-5><strong>Tam:</strong> {{ item.tamanho }}</ion-col>
-          <ion-col justify-content-end col-3><strong>Cor:</strong> {{ item.cor }}</ion-col>
+          <ion-col col-5><strong>Tam:</strong> {{ item.tamanho }}</ion-col>
+          <ion-col col-3><strong>Cor:</strong> {{ item.cor }}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col justify-content-end col-5><strong>Preço:</strong> {{ item.valVenda }}</ion-col>
-          <ion-col justify-content-start col-3><strong>Marca:</strong> {{ item.marca }}</ion-col>
+          <ion-col col-5><strong>Preço:</strong> {{ item.valVenda }}</ion-col>
+          <ion-col col-3><strong>Marca:</strong> {{ item.marca }}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col justify-content-start col-5><strong>Disp.:</strong> {{ item.qtd_disp }}</ion-col>
+          <ion-col col-5><strong>Disp.:</strong> {{ item.qtd_disp }}</ion-col>
         </ion-row>
       </ion-item>
       <ion-item-options side="right">
-          <button ion-button color="danger" icon-only (click)="deleteProduct(item)">
-            <ion-icon name="trash"></ion-icon>
-          </button>
-        </ion-item-options>
+        <button ion-button color="danger" icon-only (click)="deleteProduct(item)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
     </ion-item-sliding>
   </ion-list>
 

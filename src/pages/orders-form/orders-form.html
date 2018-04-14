@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon color="primary" name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!customer">
+    <ion-list>
+      <ion-list-header>Buscar cliente</ion-list-header>
+      <ion-item>
+        <ion-label color="primary" floating>Nome</ion-label>
+        <ion-input color="primary" [(ngModel)]="customerName" (keyup)="onSearch()" (change)="onSearch()" (blur)="onSearch()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Celular</ion-label>
+        <ion-input color="primary" [(ngModel)]="customerCellphone" (keyup)="onSearch()" (change)="onSearch()" (blur)="onSearch()"></ion-input>
+      </ion-item>
+      <ion-list-header *ngIf="customersList | async">Selecionar cliente</ion-list-header>
+      <ion-item-sliding *ngFor="let item of customersList | async">
+        <ion-item (click)="setCustomer(item)" detail-push>
+          {{ item.nome }}
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+
+    <ion-fab bottom right #fab>
+      <button ion-fab (click)="onNewCustomer()"><ion-icon name="md-add"></ion-icon></button>
+    </ion-fab>
+  </div>
+
+  <div *ngIf="customer">
+    <ion-list>
+      <ion-list-header>Novo Pedido</ion-list-header>
+      <ion-item-group>
+        <ion-item>Cliente: {{ customer.nome }}</ion-item>
+        <ion-item>Celular: {{ customer.celular }}</ion-item>
+      </ion-item-group>
+
+      <ion-list-header>Adicionar itens</ion-list-header>
+      <ion-row>
+        <ion-col>
+          <button ion-fab color="primary" (click)="presentModal()">
+            <ion-icon name="md-search"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-fab color="primary" (click)="onGetBarcode()">
+            <ion-icon name="md-qr-scanner"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-list-header *ngIf="itemsList">Itens adicionados</ion-list-header>
+      <ion-item-sliding *ngFor="let item of itemsList">
+        <ion-item>
+          <h3>{{item.desc}}</h3>
+          
+          <div class="text-align-left">
+            <ion-row>
+              <ion-col col-5>Tam: {{ item.tamanho }}</ion-col>
+              <ion-col col-3>Cor: {{ item.cor }}</ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-5>Marca: {{ item.marca }}</ion-col>
+              <ion-col col-3>Preço: {{ item.valVenda }}</ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-5>Disp.: {{ item.qtd_disp }}</ion-col>
+            </ion-row>
+          </div>
+        </ion-item>
+        
+        <ion-item-options side="right">
+          <button ion-button color="danger" icon-only (click)="deleteItem(item)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-row *ngIf="itemsList">
+        <ion-col>Itens: {{ itemsQty }}</ion-col>
+        <ion-col>Valor: R$ {{ itemsTotalValue }}</ion-col>
+      </ion-row>
+
+      <button *ngIf="itemsList" ion-button block type="button" color="primary" round (click)="onSubmit()">Confirmar</button>
+
+      <ion-row *ngIf="itemsList">
+        <ion-col>
+          <button block ion-fab color="dark" (click)="onSendMail()">
+            <ion-icon name="md-mail"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button block ion-fab color="primary" (click)="onSendSMS()">
+            <ion-icon name="ios-send"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button block ion-fab color="secondary" (click)="onSendWhats1()">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button block ion-fab color="secondary" (click)="onSendWhats2()">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </div>
+</ion-content>

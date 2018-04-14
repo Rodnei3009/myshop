@@ -1,0 +1,16 @@
+$primary-color: #8E8D93;
+
+page-orders {
+  ion-list {
+    ion-item {
+      border-left-style: solid !important;
+      border-left-width: 2px !important;
+      padding-left: 0px !important;
+      text-indent: 10px !important;
+
+      ion-icon {
+        color: $primary-color;
+      }
+    }
+  }
+}

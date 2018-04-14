@@ -1,20 +1,30 @@
 import { Component } from '@angular/core';
 
-import { AlertController, App, NavController, ToastController, LoadingController, Refresher } from 'ionic-angular';
+import { AlertController, App, NavController, ToastController, LoadingController, Refresher, NavParams } from 'ionic-angular';
+
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { Orders } from './../../providers/services/orders';
 
+import { OrdersFormPage } from './../orders-form/orders-form';
+import { OrdersViewPage } from './../orders-view/orders-view';
+
 @Component({
   selector: 'page-orders',
   templateUrl: 'orders.html'
 })
 export class OrdersPage {
+  form: FormGroup;
+  data: String = '';
+  edit: Boolean = false;
   queryText = '';
+  customerId: any = '';
 
-  items: Observable<any[]>;
+  customersList: Observable<any[]>;
+  ordersList: Observable<any[]>;
 
   loading: any;
 
@@ -22,8 +32,10 @@ export class OrdersPage {
     public alertCtrl: AlertController,
     public app: App,
     public loadingCtrl: LoadingController,
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public formBuilder: FormBuilder,
     public toastCtrl: ToastController,
-    public navCtrl: NavController,
 
     public orders: Orders
   ) { }
@@ -43,7 +55,7 @@ export class OrdersPage {
       refresher.complete();
 
       const toast = this.toastCtrl.create({
-        message: 'Lista de clientes atualizada.',
+        message: 'Lista de pedidos atualizadas.',
         duration: 1500
       });
       toast.present();
@@ -51,32 +63,31 @@ export class OrdersPage {
   }
 
   ionViewDidLoad() {
-    this.app.setTitle('Clientes');
+    this.app.setTitle('Pedidos');
 
-    //this.presentLoading();
+    this.presentLoading();
     this.getOrders();
   }
 
   getOrders() {
-    this.items = this.orders.getOrders(this.queryText);
+    this.ordersList = this.orders.getOrders(this.queryText);
 
-    this.items.subscribe(() => {
-      //this.loading.dismiss();
+    this.ordersList.subscribe(() => {
+      this.loading.dismiss();
+    }, (err) => {
+      console.log(err);
     });
-
-    //this.loading.dismiss();
   }
 
   setOrder(order) {
-    console.log(order);
-    // this.navCtrl.push(OrdersFormPage, { data: order, edit: true });
+    this.navCtrl.push(OrdersViewPage, { data: order, view: true });
   }
 
   newOrder() {
-    // this.navCtrl.push(OrdersFormPage, { data: { }, edit: false });
+    this.navCtrl.push(OrdersFormPage);
   }
 
-  deleteOrder(id) {
-    console.log(id);
+  deleteOrder(order) {
+    this.orders.deleteOrder(order);
   }
 }
