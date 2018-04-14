@@ -49,7 +49,7 @@ export class CustomersFormPage {
     this.edit = this.navParams.get('edit');
 
     if (this.edit === true) {
-      this.customerId = this.navParams.get('data').$key;
+      this.customerId = this.navParams.get('data').key;
     } else {
       this.customerId = '';
     }
@@ -77,10 +77,10 @@ export class CustomersFormPage {
     
     if(this.customerId) {
       console.log(this.customerId, this.form.value);
-      //this.customers.patchCustomer(this.customerId, this.form.value);
+      this.customers.patchCustomer(this.customerId, this.form.value);
     } else {
       console.log(this.form.value);
-      //this.customers.postCustomer(this.form.value);
+      this.customers.postCustomer(this.form.value);
     }
     
     this.navCtrl.pop();

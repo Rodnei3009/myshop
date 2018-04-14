@@ -70,7 +70,9 @@ export class ProductsFormPage {
   }
 
   onScan() {
+    alert('Clicou');
     this.BarcodeScanner.scan().then((barcodeResult: BarcodeScanResult) => {
+      alert('1');
       this.barcodeResult = barcodeResult;
       this.barcode = this.barcodeResult.text;
       this.form.patchValue({'codBarras' : this.barcode});
