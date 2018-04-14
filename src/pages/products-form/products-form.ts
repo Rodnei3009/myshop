@@ -70,14 +70,14 @@ export class ProductsFormPage {
   }
 
   onScan() {
-    //alert('Clicou');
+    alert('Clicou');
     this.BarcodeScanner.scan().then((barcodeResult: BarcodeScanResult) => {
-      //alert('1');
+      alert('1');
       this.barcodeResult = barcodeResult;
       this.barcode = this.barcodeResult.text;
       this.form.patchValue({'codBarras' : this.barcode});
     }).catch((error: Error) => {
-      //alert(error);
+      alert(error);
       console.log('barcode error: ', error);
     });
   }

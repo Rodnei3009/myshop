@@ -76,7 +76,7 @@ export class ConferenceApp {
     }
 
     if (page.logsOut === true) {
-      this.userData.logout();
+      //this.userData.logout();
     }
   }
 
