@@ -77,10 +77,10 @@ export class CustomersFormPage {
     
     if(this.customerId) {
       console.log(this.customerId, this.form.value);
-      this.customers.patchCustomer(this.customerId, this.form.value);
+      //this.customers.patchCustomer(this.customerId, this.form.value);
     } else {
       console.log(this.form.value);
-      this.customers.postCustomer(this.form.value);
+      //this.customers.postCustomer(this.form.value);
     }
     
     this.navCtrl.pop();
