@@ -87,6 +87,7 @@
       "cordova-plugin-datepicker": {},
       "cordova-plugin-contacts": {},
       "cordova-plugin-x-socialsharing": {}
+      
     }
   }
 }
