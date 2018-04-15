@@ -13,7 +13,6 @@ import { ProductsPage } from '../pages/products/products';
 import { TabsPage } from '../pages/tabs-page/tabs-page'
 
 import { UserData } from '../providers/user-data';
-//import { UserData } from '../providers/user-data';
 
 import { Customers } from '../providers/services/customers';
 import { Orders } from '../providers/services/orders';
@@ -76,7 +75,7 @@ export class ConferenceApp {
     }
 
     if (page.logsOut === true) {
-      //this.userData.logout();
+      this.userData.logout();
     }
   }
 

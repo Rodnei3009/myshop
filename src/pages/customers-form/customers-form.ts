@@ -49,7 +49,7 @@ export class CustomersFormPage {
     this.edit = this.navParams.get('edit');
 
     if (this.edit === true) {
-      this.customerId = this.navParams.get('data').key;
+      this.customerId = this.navParams.get('data').$key;
     } else {
       this.customerId = '';
     }
