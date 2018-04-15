@@ -37,11 +37,9 @@
         <splash density="land-xxxhdpi" src="resources/android/splash/drawable-land-xxxhdpi-screen.png" />
     </platform>
     <platform name="ios">
-        
-        <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+        <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
             <string>Davisa needs camera access</string>
         </edit-config>
-        
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
@@ -88,7 +86,6 @@
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="SplashScreenDelay" value="3000" />
-    <plugin name="phonegap-plugin-barcodescanner" spec="^7.1.0" />
     <plugin name="cordova-plugin-crosswalk-webview" spec="^2.4.0">
         <variable name="XWALK_VERSION" value="22+" />
         <variable name="XWALK_LITEVERSION" value="xwalk_core_library_canary:17+" />
