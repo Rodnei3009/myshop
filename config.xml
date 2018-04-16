@@ -83,7 +83,6 @@
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="SplashScreenDelay" value="3000" />
-    <engine name="ios" spec="^4.5.2" />
     <plugin name="phonegap-plugin-barcodescanner" spec="^7.0.0" />
     <plugin name="cordova-plugin-crosswalk-webview" spec="^2.4.0">
         <variable name="XWALK_VERSION" value="22+" />
@@ -104,4 +103,5 @@
     <plugin name="cordova-plugin-datepicker" spec="^0.9.3" />
     <plugin name="cordova-plugin-contacts" spec="^3.0.1" />
     <plugin name="cordova-plugin-x-socialsharing" spec="^5.3.2" />
+    <engine name="ios" spec="~4.5.2" />
 </widget>
