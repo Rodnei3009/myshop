@@ -73,10 +73,6 @@ export class ConferenceApp {
         console.log(`Didn't set nav root: ${err}`);
       });
     }
-
-    if (page.logsOut === true) {
-      this.userData.logout();
-    }
   }
 
   platformReady() {

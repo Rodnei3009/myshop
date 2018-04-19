@@ -258,10 +258,10 @@ export class OrdersFormPage {
   }
 
   onSendWhats1(message, cellphone) {
-    this.socialSharing.shareViaWhatsApp('mensagem', '', '').then(() => {
+    this.socialSharing.shareViaWhatsApp(message, cellphone, '').then(() => {
       alert('whats com sucesso');
     }).catch(() => {
-      alert('whats com erro');      
+      alert('whats com erro');
     });
   }
 
@@ -269,7 +269,6 @@ export class OrdersFormPage {
     // let strQuery: string = '02111984888468';
     let strQuery: string = '02119991405043';
 
-    alert('antes de chamar');
     this.contacts.find(this.contactFieldtoSearch, { filter: strQuery }).then((contacts) => {
       alert(contacts);
     }).catch((err) => {
