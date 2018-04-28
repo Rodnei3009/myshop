@@ -20,6 +20,10 @@ export class OrdersViewPage {
   orderCustomerName: String = '';
   orderDate: String = '';
   orderCustomerCellphone: String = '';
+  orderPaymentMethod: String = '';
+  orderSalesMethod: String = '';
+  orderType: String = '';
+  orderDiscount: String = '';
   orderTotalCosts: String = '';
 
   orderProductsList: Array<Object>;
@@ -46,7 +50,11 @@ export class OrdersViewPage {
       this.orderCustomerName = this.navParams.get('data').nomCliente;
       this.orderDate = this.navParams.get('data').dataHora;
       this.orderCustomerCellphone = this.navParams.get('data').celCliente;
-      this.orderTotalCosts = Number(this.navParams.get('data').valTotal).toFixed(2).replace(/\./g, ',');
+      this.orderPaymentMethod = this.navParams.get('data').formaPagamento;
+      this.orderSalesMethod = this.navParams.get('data').formaVenda;
+      this.orderType = this.navParams.get('data').retirada;
+      this.orderDiscount = Number(this.navParams.get('data').desconto).toFixed(2).replace(/\./g, ',');
+      this.orderTotalCosts = Number(Number(this.navParams.get('data').valTotal) + Number(this.navParams.get('data').desconto)).toFixed(2).replace(/\./g, ',');
       this.orderProductsList = Object.keys(this.navParams.get('data').itens).map((key) => {
         return [ (key), this.navParams.get('data').itens[key] ];
       });

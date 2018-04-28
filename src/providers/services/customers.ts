@@ -28,19 +28,9 @@ export class Customers {
 
     this.items = query.length >= 1 ? (
       this.itemsRef.snapshotChanges().map(changes => {
-        let item = changes.filter(subItem => {
-          let response = false;
-
-          if(query[0] && subItem.payload.val().nome.toLowerCase().includes(query[0]) && !subItem.payload.val().delete){
-            response = true;
-          }
-
-          if(query[1] && subItem.payload.val().celular.toLowerCase().includes(query[1]) && !subItem.payload.val().delete){
-            response = true;
-          }
-
-          return response;
-        });
+        let item = changes.filter(subItem => !subItem.payload.val().delete);
+        item = item.filter(subItem => subItem.payload.val().nome.toLowerCase().includes(query[0]));
+        if(query.length > 1) item = item.filter(subItem => subItem.payload.val().celular.toLowerCase().includes(query[1]));
 
         const newItem = item.map(c => {
           const payload = Object.assign({}, c.payload.val(), {});

@@ -12,4 +12,17 @@ page-products {
       }
     }
   }
+
+  ion-label {
+    h3 {
+      font-size: 18px !important;
+      font-weight: bold !important;
+    }
+
+    ion-row {
+      ion-col {
+        padding-left: 0px !important;
+      }
+    }
+  }
 }

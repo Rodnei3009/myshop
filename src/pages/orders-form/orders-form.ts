@@ -18,6 +18,7 @@ import { UserData } from './../../providers/user-data';
 
 import { CustomersFormPage } from './../customers-form/customers-form';
 import { ProductsPage } from './../products/products';
+import { OrdersPage } from './../orders/orders';
 
 @Component({
   selector: 'page-orders-form',
@@ -31,7 +32,11 @@ export class OrdersFormPage {
     celCliente: '',
     nomCliente: '',
     totalItens: '',
-    valTotal: '',
+    valTotal: 0,
+    formaPagamento: '',
+    formaVenda: '',
+    discount: 0,
+    retirada: '',
     dataHora: '',
     items: []
   };
@@ -40,6 +45,10 @@ export class OrdersFormPage {
   customer: any = null;
   customerName: String = '';
   customerCellphone: String = '';
+  paymentMethod: String = '';
+  salesMethod: String = '';
+  discount: Number = 0;
+  orderType: String = '';
 
   customersList: Observable<any[]>;
   productsList: Observable<any[]>;
@@ -96,10 +105,17 @@ export class OrdersFormPage {
         message = message + "\n";
         message = message + "Detalhes do seu pedido:" + "\n";
     
-        this.data.celCliente = this.customerCellphone;
+        this.data.celCliente = this.customer.celular;
         this.data.nomCliente = this.customer.nome;
+        this.data.formaPagamento = this.paymentMethod;
+        this.data.formaVenda = this.salesMethod;
+        this.data.desconto = this.discount;
+        this.data.retirada = this.orderType;
         this.data.totalItens = this.itemsQty;
-        this.data.valTotal = this.itemsTotalValue;
+
+        const totalValue:Number = Number(this.itemsTotalValue) - Number(this.discount);
+
+        this.data.valTotal = totalValue;
         this.data.dataHora = this.getDateTime();
         this.data.itens = this.itemsList;
     
@@ -152,6 +168,8 @@ export class OrdersFormPage {
     this.sendSMS(message, this.customerCellphone);
 
     this.orders.postOrder(this.data);
+
+    this.navCtrl.push(OrdersPage);
   }
 
   setCustomer(customer) {

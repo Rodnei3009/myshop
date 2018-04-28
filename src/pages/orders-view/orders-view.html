@@ -9,10 +9,13 @@
 <ion-content>
   <ion-list>
     <ion-list-header>Pedido #{{ orderId }}</ion-list-header>
+    <ion-list-header>Data / Hora: {{ orderDate }}</ion-list-header>
     <ion-item-group>
       <ion-item>Cliente: {{ orderCustomerName }}</ion-item>
-      <ion-item>Data / Hora: {{ orderDate }}</ion-item>
       <ion-item>Celular: {{ orderCustomerCellphone }}</ion-item>
+      <ion-item>Forma de Pagamento: {{ orderPaymentMethod }}</ion-item>
+      <ion-item>Retirada: {{ orderType }}</ion-item>
+      <ion-item>Forma de Venda: {{ orderSalesMethod }}</ion-item>
     </ion-item-group>
   </ion-list>
   
@@ -44,6 +47,14 @@
   </ion-list>
 
   <ion-list>
+    <ion-list-header>Subtotal</ion-list-header>
+    <ion-item-group>
+      <ion-item>R$ {{ orderTotalCosts }}</ion-item>
+    </ion-item-group>
+    <ion-list-header>Desconto</ion-list-header>
+    <ion-item-group>
+      <ion-item>R$ {{ orderDiscount }}</ion-item>
+    </ion-item-group>
     <ion-list-header>Total</ion-list-header>
     <ion-item-group>
       <ion-item>R$ {{ orderTotalCosts }}</ion-item>

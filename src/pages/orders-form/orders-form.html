@@ -33,9 +33,9 @@
 
   <div *ngIf="customer">
     <ion-list>
-      <ion-list-header>Novo Pedido</ion-list-header>
+      <ion-list-header>Cliente escolhido</ion-list-header>
       <ion-item-group>
-        <ion-item>Cliente: {{ customer.nome }}</ion-item>
+        <ion-item>Nome: {{ customer.nome }}</ion-item>
         <ion-item>Celular: {{ customer.celular }}</ion-item>
       </ion-item-group>
 
@@ -87,7 +87,43 @@
         <ion-col>Valor: R$ {{ itemsTotalValue }}</ion-col>
       </ion-row>
 
-      <button *ngIf="itemsList" ion-button block type="button" color="primary" round (click)="onSubmit()">Confirmar</button>
+      <ion-list-header *ngIf="itemsList">Informações de pagamento</ion-list-header>
+      <div *ngIf="itemsList">
+        <ion-item>
+          <ion-icon color="primary" name="md-card" item-left></ion-icon>
+          <ion-label color="primary" floating>Forma de pagamento</ion-label>
+          <ion-select interface="action-sheet" [(ngModel)]="paymentMethod">
+            <ion-option value="Dinheiro">Dinheiro</ion-option>
+            <ion-option value="Debito">Débito</ion-option>
+            <ion-option value="Credito">Crédito</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-icon color="primary" name="md-cart" item-left></ion-icon>
+          <ion-label color="primary" floating>Retirada</ion-label>
+          <ion-select interface="action-sheet" [(ngModel)]="orderType">
+            <ion-option value="Pronta Entrega">Pronta entrega</ion-option>
+            <ion-option value="Encomenda">Encomenda</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-icon color="primary" name="md-contacts" item-left></ion-icon>
+          <ion-label color="primary" floating>Forma de venda</ion-label>
+          <ion-select interface="action-sheet" [(ngModel)]="salesMethod">
+            <ion-option value="Facebook">Facebook</ion-option>
+            <ion-option value="Instagram">Instagram</ion-option>
+            <ion-option value="Bazar">Bazar</ion-option>
+            <ion-option value="Indicacao">Indicação</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-icon color="primary" name="md-pricetags" item-left></ion-icon>
+          <ion-label color="primary" floating>Desconto</ion-label>
+          <ion-input type="text" [(ngModel)]="discount"></ion-input>
+        </ion-item>
+      </div>
+
+      <button *ngIf="itemsList" ion-button block type="button" color="primary" (click)="onSubmit()">Confirmar</button>
 
       <ion-row *ngIf="itemsList">
         <ion-col>
