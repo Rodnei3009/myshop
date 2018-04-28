@@ -40009,6 +40009,45 @@ page-orders-form ion-item-options button {
   padding: 0px !important;
 }
 
+page-orders-form .list-header {
+  padding: 0px !important;
+  margin-top: 15px !important;
+}
+
+page-orders-form .list-header ion-label {
+  font-size: 15px !important;
+  margin: !important;
+}
+
+page-orders-form .item-block {
+  padding: 0px !important;
+}
+
+page-orders-view ion-item {
+  padding: 0px 10px !important;
+}
+
+page-orders-view ion-item .item-inner {
+  padding: 0px !important;
+}
+
+page-orders-view ion-item .item-inner ion-col {
+  padding: 0px !important;
+}
+
+page-orders-view ion-list-header {
+  padding: 0px 10px !important;
+}
+
+page-orders-view ion-list-header ion-label {
+  font-size: 15px !important;
+  font-weight: bold !important;
+}
+
+page-orders-view ion-list {
+  margin-bottom: 15px !important;
+}
+
 page-products ion-list ion-item {
   border-left: #8E8D93 2px solid !important;
   padding-left: 0px !important;
@@ -40017,6 +40056,15 @@ page-products ion-list ion-item {
 
 page-products ion-list ion-item ion-icon {
   color: #8E8D93;
+}
+
+page-products ion-label h3 {
+  font-size: 18px !important;
+  font-weight: bold !important;
+}
+
+page-products ion-label ion-row ion-col {
+  padding-left: 0px !important;
 }
 
 page-products-form form ion-icon {
