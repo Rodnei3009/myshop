@@ -1,16 +1,16 @@
 webpackJsonp([0],{
 
-/***/ 142:
+/***/ 117:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomersPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_services_customers__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__customers_form_customers_form__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_services_customers__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__customers_form_customers_form__ = __webpack_require__(118);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -76,7 +76,7 @@ var CustomersPage = (function () {
     };
     CustomersPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-customers',template:/*ion-inline-start:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/customers/customers.html"*/'<ion-header>\n  <ion-navbar no-border-bottom>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n  <ion-toolbar no-border-top>\n    <ion-searchbar color="primary"\n                   [(ngModel)]="queryText"\n                   (ionInput)="getCustomers()"\n                   placeholder="Buscar">\n    </ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-refresher (ionRefresh)="refresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-list>\n    <ion-item-sliding *ngFor="let item of items | async">\n      <ion-item (click)="setCustomer(item)">\n        <ion-label>\n          {{ item.nome }}\n        </ion-label>\n        <ion-icon name="md-arrow-dropright" item-end></ion-icon>\n      </ion-item>\n      <ion-item-options side="right">\n        <button ion-button color="danger" icon-only (click)="deleteCustomer(item.key)">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n\n  <ion-fab bottom right #fab>\n    <button ion-fab (click)="newCustomer()"><ion-icon name="md-add"></ion-icon></button>\n  </ion-fab>\n</ion-content>'/*ion-inline-end:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/customers/customers.html"*/
+            selector: 'page-customers',template:/*ion-inline-start:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\customers\customers.html"*/'<ion-header>\n  <ion-navbar no-border-bottom>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n  <ion-toolbar no-border-top>\n    <ion-searchbar color="primary"\n                   [(ngModel)]="queryText"\n                   (ionInput)="getCustomers()"\n                   placeholder="Buscar">\n    </ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-refresher (ionRefresh)="refresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-list>\n    <ion-item-sliding *ngFor="let item of items | async">\n      <ion-item (click)="setCustomer(item)">\n        <ion-label>\n          {{ item.nome }}\n        </ion-label>\n        <ion-icon name="md-arrow-dropright" item-end></ion-icon>\n      </ion-item>\n      <ion-item-options side="right">\n        <button ion-button color="danger" icon-only (click)="deleteCustomer(item.key)">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n\n  <ion-fab bottom right #fab>\n    <button ion-fab (click)="newCustomer()"><ion-icon name="md-add"></ion-icon></button>\n  </ion-fab>\n</ion-content>'/*ion-inline-end:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\customers\customers.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
@@ -92,16 +92,16 @@ var CustomersPage = (function () {
 
 /***/ }),
 
-/***/ 143:
+/***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomersFormPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_date_picker__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_services_customers__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_date_picker__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_services_customers__ = __webpack_require__(48);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -182,7 +182,7 @@ var CustomersFormPage = (function () {
     };
     CustomersFormPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-customers-form',template:/*ion-inline-start:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/customers-form/customers-form.html"*/'<ion-header>\n  <ion-navbar no-border-bottom>\n    <button ion-button menuToggle>\n      <ion-icon color="primary" name="md-menu"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <form [formGroup]="form" (ngSubmit)="onSubmit(); $event.preventDefault()">\n    <ion-item>\n      <ion-icon color="primary" name="md-person" item-left></ion-icon>\n      <ion-label color="primary" floating>Nome</ion-label>\n      <ion-input type="text" formControlName="nome"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-icon color="primary" name="md-phone-portrait" item-left></ion-icon>\n      <ion-label color="primary" floating>Celular</ion-label>\n      <ion-input type="tel" formControlName="celular"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-icon color="primary" name="md-at" item-left></ion-icon>\n      <ion-label color="primary" floating>E-mail</ion-label>\n      <ion-input type="text" formControlName="email"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-icon color="primary" name="md-body" item-left></ion-icon>\n      <ion-label color="primary" floating>Sexo</ion-label>\n      <ion-select interface="action-sheet" formControlName="sexo">\n        <ion-option value="F">Feminino</ion-option>\n        <ion-option value="M">Masculino</ion-option>\n      </ion-select>\n    </ion-item>\n\n    <ion-item>\n      <ion-icon color="primary" name="md-construct" item-left></ion-icon>\n      <ion-label color="primary" floating>Profissão</ion-label>\n      <ion-input type="text" formControlName="prof"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-icon color="primary" name="md-contacts" item-left></ion-icon>\n      <ion-label color="primary" floating>Estado Civil</ion-label>\n      <ion-input type="text" formControlName="estcivil"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-icon color="primary" name="md-calendar" item-left></ion-icon>\n      <ion-label color="primary" floating>Aniversário</ion-label>\n      <ion-input type="text" formControlName="aniver" (focus)="getBirthdayPicker()" ></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-icon color="primary" name="md-card" item-left></ion-icon>\n      <ion-label color="primary" floating>CPF</ion-label>\n      <ion-input type="number" formControlName="CPF"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-icon color="primary" name="md-finger-print" item-left></ion-icon>\n      <ion-label color="primary" floating>RG</ion-label>\n      <ion-input type="number" formControlName="RG"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-icon color="primary" name="md-home" item-left></ion-icon>\n      <ion-label color="primary" floating>Endereço</ion-label>\n      <ion-input type="text" formControlName="endereco"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-icon color="primary" name="md-infinite" item-left></ion-icon>\n      <ion-label color="primary" floating>Complemento</ion-label>\n      <ion-input type="text" formControlName="complemento"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-icon color="primary" name="md-information-circle" item-left></ion-icon>\n      <ion-label color="primary" floating>Indicação</ion-label>\n      <ion-input type="text" formControlName="indicacao"></ion-input>\n    </ion-item>\n  </form>\n\n  <ion-fab bottom right #fab>\n    <button ion-fab (click)="onSubmit()" [disabled]="form.invalid"><ion-icon name="md-checkmark"></ion-icon></button>\n  </ion-fab>\n</ion-content>'/*ion-inline-end:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/customers-form/customers-form.html"*/
+            selector: 'page-customers-form',template:/*ion-inline-start:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\customers-form\customers-form.html"*/'<ion-header>\n  <ion-navbar no-border-bottom>\n    <button ion-button menuToggle>\n      <ion-icon color="primary" name="md-menu"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <form [formGroup]="form" (ngSubmit)="onSubmit(); $event.preventDefault()">\n    <ion-item>\n      <ion-icon color="primary" name="md-person" item-left></ion-icon>\n      <ion-label color="primary" floating>Nome</ion-label>\n      <ion-input type="text" formControlName="nome"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-icon color="primary" name="md-phone-portrait" item-left></ion-icon>\n      <ion-label color="primary" floating>Celular</ion-label>\n      <ion-input type="tel" formControlName="celular"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-icon color="primary" name="md-at" item-left></ion-icon>\n      <ion-label color="primary" floating>E-mail</ion-label>\n      <ion-input type="text" formControlName="email"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-icon color="primary" name="md-body" item-left></ion-icon>\n      <ion-label color="primary" floating>Sexo</ion-label>\n      <ion-select interface="action-sheet" formControlName="sexo">\n        <ion-option value="F">Feminino</ion-option>\n        <ion-option value="M">Masculino</ion-option>\n      </ion-select>\n    </ion-item>\n\n    <ion-item>\n      <ion-icon color="primary" name="md-construct" item-left></ion-icon>\n      <ion-label color="primary" floating>Profissão</ion-label>\n      <ion-input type="text" formControlName="prof"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-icon color="primary" name="md-contacts" item-left></ion-icon>\n      <ion-label color="primary" floating>Estado Civil</ion-label>\n      <ion-input type="text" formControlName="estcivil"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-icon color="primary" name="md-calendar" item-left></ion-icon>\n      <ion-label color="primary" floating>Aniversário</ion-label>\n      <ion-input type="text" formControlName="aniver" (focus)="getBirthdayPicker()" ></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-icon color="primary" name="md-card" item-left></ion-icon>\n      <ion-label color="primary" floating>CPF</ion-label>\n      <ion-input type="number" formControlName="CPF"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-icon color="primary" name="md-finger-print" item-left></ion-icon>\n      <ion-label color="primary" floating>RG</ion-label>\n      <ion-input type="number" formControlName="RG"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-icon color="primary" name="md-home" item-left></ion-icon>\n      <ion-label color="primary" floating>Endereço</ion-label>\n      <ion-input type="text" formControlName="endereco"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-icon color="primary" name="md-infinite" item-left></ion-icon>\n      <ion-label color="primary" floating>Complemento</ion-label>\n      <ion-input type="text" formControlName="complemento"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-icon color="primary" name="md-information-circle" item-left></ion-icon>\n      <ion-label color="primary" floating>Indicação</ion-label>\n      <ion-input type="text" formControlName="indicacao"></ion-input>\n    </ion-item>\n  </form>\n\n  <ion-fab bottom right #fab>\n    <button ion-fab (click)="onSubmit()" [disabled]="form.invalid"><ion-icon name="md-checkmark"></ion-icon></button>\n  </ion-fab>\n</ion-content>'/*ion-inline-end:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\customers-form\customers-form.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
@@ -200,7 +200,7 @@ var CustomersFormPage = (function () {
 
 /***/ }),
 
-/***/ 144:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -232,7 +232,7 @@ var UserData = (function () {
 
 /***/ }),
 
-/***/ 157:
+/***/ 132:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -245,11 +245,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 157;
+webpackEmptyAsyncContext.id = 132;
 
 /***/ }),
 
-/***/ 199:
+/***/ 174:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -262,29 +262,29 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 199;
+webpackEmptyAsyncContext.id = 174;
 
 /***/ }),
 
-/***/ 294:
+/***/ 240:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrdersFormPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_contacts__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_contacts__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_barcode_scanner__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_social_sharing__ = __webpack_require__(243);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_services_customers__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_services_orders__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_services_products__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_user_data__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__customers_form_customers_form__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__products_products__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__orders_orders__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_barcode_scanner__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_social_sharing__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_services_customers__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_services_orders__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_services_products__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_user_data__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__customers_form_customers_form__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__products_products__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__orders_orders__ = __webpack_require__(63);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -516,7 +516,7 @@ var OrdersFormPage = (function () {
     };
     OrdersFormPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-orders-form',template:/*ion-inline-start:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/orders-form/orders-form.html"*/'<ion-header>\n  <ion-navbar no-border-bottom>\n    <button ion-button menuToggle>\n      <ion-icon color="primary" name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <div *ngIf="!customer">\n    <ion-list>\n      <ion-list-header>Buscar cliente</ion-list-header>\n      <ion-item>\n        <ion-label color="primary" floating>Nome</ion-label>\n        <ion-input color="primary" [(ngModel)]="customerName" (keyup)="onSearch()" (change)="onSearch()" (blur)="onSearch()"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label color="primary" floating>Celular</ion-label>\n        <ion-input color="primary" [(ngModel)]="customerCellphone" (keyup)="onSearch()" (change)="onSearch()" (blur)="onSearch()"></ion-input>\n      </ion-item>\n      <ion-list-header *ngIf="customersList | async">Selecionar cliente</ion-list-header>\n      <ion-item-sliding *ngFor="let item of customersList | async">\n        <ion-item (click)="setCustomer(item)" detail-push>\n          {{ item.nome }}\n        </ion-item>\n      </ion-item-sliding>\n    </ion-list>\n\n    <ion-fab bottom right #fab>\n      <button ion-fab (click)="onNewCustomer()"><ion-icon name="md-add"></ion-icon></button>\n    </ion-fab>\n  </div>\n\n  <div *ngIf="customer">\n    <ion-list>\n      <ion-list-header>Cliente escolhido</ion-list-header>\n      <ion-item-group>\n        <ion-item>Nome: {{ customer.nome }}</ion-item>\n        <ion-item>Celular: {{ customer.celular }}</ion-item>\n      </ion-item-group>\n\n      <ion-list-header>Adicionar itens</ion-list-header>\n      <ion-row>\n        <ion-col>\n          <button ion-fab color="primary" (click)="presentModal()">\n            <ion-icon name="md-search"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col>\n          <button ion-fab color="primary" (click)="onGetBarcode()">\n            <ion-icon name="md-qr-scanner"></ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n\n      <ion-list-header *ngIf="itemsList">Itens adicionados</ion-list-header>\n      <ion-item-sliding *ngFor="let item of itemsList">\n        <ion-item>\n          <h3>{{item.desc}}</h3>\n          \n          <div class="text-align-left">\n            <ion-row>\n              <ion-col col-5>Tam: {{ item.tamanho }}</ion-col>\n              <ion-col col-3>Cor: {{ item.cor }}</ion-col>\n            </ion-row>\n\n            <ion-row>\n              <ion-col col-5>Marca: {{ item.marca }}</ion-col>\n              <ion-col col-3>Preço: {{ item.valVenda }}</ion-col>\n            </ion-row>\n\n            <ion-row>\n              <ion-col col-5>Disp.: {{ item.qtd_disp }}</ion-col>\n            </ion-row>\n          </div>\n        </ion-item>\n        \n        <ion-item-options side="right">\n          <button ion-button color="danger" icon-only (click)="deleteItem(item)">\n            <ion-icon name="trash"></ion-icon>\n          </button>\n        </ion-item-options>\n      </ion-item-sliding>\n\n      <ion-row *ngIf="itemsList">\n        <ion-col>Itens: {{ itemsQty }}</ion-col>\n        <ion-col>Valor: R$ {{ itemsTotalValue }}</ion-col>\n      </ion-row>\n\n      <ion-list-header *ngIf="itemsList">Informações de pagamento</ion-list-header>\n      <div *ngIf="itemsList">\n        <ion-item>\n          <ion-icon color="primary" name="md-card" item-left></ion-icon>\n          <ion-label color="primary" floating>Forma de pagamento</ion-label>\n          <ion-select interface="action-sheet" [(ngModel)]="paymentMethod">\n            <ion-option value="Dinheiro">Dinheiro</ion-option>\n            <ion-option value="Debito">Débito</ion-option>\n            <ion-option value="Credito">Crédito</ion-option>\n          </ion-select>\n        </ion-item>\n        <ion-item>\n          <ion-icon color="primary" name="md-cart" item-left></ion-icon>\n          <ion-label color="primary" floating>Retirada</ion-label>\n          <ion-select interface="action-sheet" [(ngModel)]="orderType">\n            <ion-option value="Pronta Entrega">Pronta entrega</ion-option>\n            <ion-option value="Encomenda">Encomenda</ion-option>\n          </ion-select>\n        </ion-item>\n        <ion-item>\n          <ion-icon color="primary" name="md-contacts" item-left></ion-icon>\n          <ion-label color="primary" floating>Forma de venda</ion-label>\n          <ion-select interface="action-sheet" [(ngModel)]="salesMethod">\n            <ion-option value="Facebook">Facebook</ion-option>\n            <ion-option value="Instagram">Instagram</ion-option>\n            <ion-option value="Bazar">Bazar</ion-option>\n            <ion-option value="Indicacao">Indicação</ion-option>\n          </ion-select>\n        </ion-item>\n        <ion-item>\n          <ion-icon color="primary" name="md-pricetags" item-left></ion-icon>\n          <ion-label color="primary" floating>Desconto</ion-label>\n          <ion-input type="text" [(ngModel)]="discount"></ion-input>\n        </ion-item>\n      </div>\n\n      <button *ngIf="itemsList" ion-button block type="button" color="primary" (click)="onSubmit()">Confirmar</button>\n\n      <ion-row *ngIf="itemsList">\n        <ion-col>\n          <button block ion-fab color="dark" (click)="onSendMail()">\n            <ion-icon name="md-mail"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col>\n          <button block ion-fab color="primary" (click)="onSendSMS()">\n            <ion-icon name="ios-send"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col>\n          <button block ion-fab color="secondary" (click)="onSendWhats1()">\n            <ion-icon name="logo-whatsapp"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col>\n          <button block ion-fab color="secondary" (click)="onSendWhats2()">\n            <ion-icon name="logo-whatsapp"></ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-list>\n  </div>\n</ion-content>'/*ion-inline-end:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/orders-form/orders-form.html"*/
+            selector: 'page-orders-form',template:/*ion-inline-start:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\orders-form\orders-form.html"*/'<ion-header>\n  <ion-navbar no-border-bottom>\n    <button ion-button menuToggle>\n      <ion-icon color="primary" name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <div *ngIf="!customer">\n    <ion-list>\n      <ion-list-header>Buscar cliente</ion-list-header>\n      <ion-item>\n        <ion-label color="primary" floating>Nome</ion-label>\n        <ion-input color="primary" [(ngModel)]="customerName" (keyup)="onSearch()" (change)="onSearch()" (blur)="onSearch()"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label color="primary" floating>Celular</ion-label>\n        <ion-input color="primary" [(ngModel)]="customerCellphone" (keyup)="onSearch()" (change)="onSearch()" (blur)="onSearch()"></ion-input>\n      </ion-item>\n      <ion-list-header *ngIf="customersList | async">Selecionar cliente</ion-list-header>\n      <ion-item-sliding *ngFor="let item of customersList | async">\n        <ion-item (click)="setCustomer(item)" detail-push>\n          {{ item.nome }}\n        </ion-item>\n      </ion-item-sliding>\n    </ion-list>\n\n    <ion-fab bottom right #fab>\n      <button ion-fab (click)="onNewCustomer()"><ion-icon name="md-add"></ion-icon></button>\n    </ion-fab>\n  </div>\n\n  <div *ngIf="customer">\n    <ion-list>\n      <ion-list-header>Cliente escolhido</ion-list-header>\n      <ion-item-group>\n        <ion-item>Nome: {{ customer.nome }}</ion-item>\n        <ion-item>Celular: {{ customer.celular }}</ion-item>\n      </ion-item-group>\n\n      <ion-list-header>Adicionar itens</ion-list-header>\n      <ion-row>\n        <ion-col>\n          <button ion-fab color="primary" (click)="presentModal()">\n            <ion-icon name="md-search"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col>\n          <button ion-fab color="primary" (click)="onGetBarcode()">\n            <ion-icon name="md-qr-scanner"></ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n\n      <ion-list-header *ngIf="itemsList">Itens adicionados</ion-list-header>\n      <ion-item-sliding *ngFor="let item of itemsList">\n        <ion-item>\n          <h3>{{item.desc}}</h3>\n          \n          <div class="text-align-left">\n            <ion-row>\n              <ion-col col-5>Tam: {{ item.tamanho }}</ion-col>\n              <ion-col col-3>Cor: {{ item.cor }}</ion-col>\n            </ion-row>\n\n            <ion-row>\n              <ion-col col-5>Marca: {{ item.marca }}</ion-col>\n              <ion-col col-3>Preço: {{ item.valVenda }}</ion-col>\n            </ion-row>\n\n            <ion-row>\n              <ion-col col-5>Disp.: {{ item.qtd_disp }}</ion-col>\n            </ion-row>\n          </div>\n        </ion-item>\n        \n        <ion-item-options side="right">\n          <button ion-button color="danger" icon-only (click)="deleteItem(item)">\n            <ion-icon name="trash"></ion-icon>\n          </button>\n        </ion-item-options>\n      </ion-item-sliding>\n\n      <ion-row *ngIf="itemsList">\n        <ion-col>Itens: {{ itemsQty }}</ion-col>\n        <ion-col>Valor: R$ {{ itemsTotalValue }}</ion-col>\n      </ion-row>\n\n      <ion-list-header *ngIf="itemsList">Informações de pagamento</ion-list-header>\n      <div *ngIf="itemsList">\n        <ion-item>\n          <ion-icon color="primary" name="md-card" item-left></ion-icon>\n          <ion-label color="primary" floating>Forma de pagamento</ion-label>\n          <ion-select interface="action-sheet" [(ngModel)]="paymentMethod">\n            <ion-option value="Dinheiro">Dinheiro</ion-option>\n            <ion-option value="Debito">Débito</ion-option>\n            <ion-option value="Credito">Crédito</ion-option>\n          </ion-select>\n        </ion-item>\n        <ion-item>\n          <ion-icon color="primary" name="md-cart" item-left></ion-icon>\n          <ion-label color="primary" floating>Retirada</ion-label>\n          <ion-select interface="action-sheet" [(ngModel)]="orderType">\n            <ion-option value="Pronta Entrega">Pronta entrega</ion-option>\n            <ion-option value="Encomenda">Encomenda</ion-option>\n          </ion-select>\n        </ion-item>\n        <ion-item>\n          <ion-icon color="primary" name="md-contacts" item-left></ion-icon>\n          <ion-label color="primary" floating>Forma de venda</ion-label>\n          <ion-select interface="action-sheet" [(ngModel)]="salesMethod">\n            <ion-option value="Facebook">Facebook</ion-option>\n            <ion-option value="Instagram">Instagram</ion-option>\n            <ion-option value="Bazar">Bazar</ion-option>\n            <ion-option value="Indicacao">Indicação</ion-option>\n          </ion-select>\n        </ion-item>\n        <ion-item>\n          <ion-icon color="primary" name="md-pricetags" item-left></ion-icon>\n          <ion-label color="primary" floating>Desconto</ion-label>\n          <ion-input type="text" [(ngModel)]="discount"></ion-input>\n        </ion-item>\n      </div>\n\n      <button *ngIf="itemsList" ion-button block type="button" color="primary" (click)="onSubmit()">Confirmar</button>\n\n      <ion-row *ngIf="itemsList">\n        <ion-col>\n          <button block ion-fab color="dark" (click)="onSendMail()">\n            <ion-icon name="md-mail"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col>\n          <button block ion-fab color="primary" (click)="onSendSMS()">\n            <ion-icon name="ios-send"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col>\n          <button block ion-fab color="secondary" (click)="onSendWhats1()">\n            <ion-icon name="logo-whatsapp"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col>\n          <button block ion-fab color="secondary" (click)="onSendWhats2()">\n            <ion-icon name="logo-whatsapp"></ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-list>\n  </div>\n</ion-content>'/*ion-inline-end:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\orders-form\orders-form.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
@@ -541,16 +541,16 @@ var OrdersFormPage = (function () {
 
 /***/ }),
 
-/***/ 295:
+/***/ 241:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsFormPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_services_products__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_services_products__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -620,12 +620,13 @@ var ProductsFormPage = (function () {
             _this.barcode = _this.barcodeResult.text;
             _this.form.patchValue({ 'codBarras': _this.barcode });
         }).catch(function (error) {
+            alert(error);
             console.log('barcode error: ', error);
         });
     };
     ProductsFormPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-products-form',template:/*ion-inline-start:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/products-form/products-form.html"*/'<ion-header>\n  <ion-navbar no-border-bottom>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-buttons right>\n      <ion-fab right middle>\n        <button ion-fab mini color="primary" (click)="onScan()">\n          <ion-icon name="md-qr-scanner"></ion-icon>\n        </button>\n      </ion-fab>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <form [formGroup]="form" (ngSubmit)="onSubmit(); $event.preventDefault()">\n    <ion-grid>\n      <ion-item>\n        <ion-icon color="primary" name="md-barcode" item-left></ion-icon>\n        <ion-label color="primary" floating>Código de barras</ion-label>\n        <ion-input type="text" formControlName="codBarras"></ion-input>  \n      </ion-item>\n\n      <ion-item>\n        <ion-icon color="primary" name="md-shirt" item-left></ion-icon>\n        <ion-label color="primary" floating>Produto</ion-label>\n        <ion-input type="text" formControlName="desc"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-icon color="primary" name="md-information-circle" item-left></ion-icon>\n        <ion-label color="primary" floating>Código</ion-label>\n        <ion-input type="text" formControlName="codigo"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-icon color="primary" name="md-pricetag" item-left></ion-icon>\n        <ion-label color="primary" floating>Marca</ion-label>\n        <ion-select interface="action-sheet" formControlName="marca">\n          <ion-option value="DeMillus">DeMillus</ion-option>\n          <ion-option value="Valisere">Valisére</ion-option>\n          <ion-option value="ValFrance">ValFrance</ion-option>\n          <ion-option value="Toque Intimo">Toque Íntimo</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-icon color="primary" name="md-color-palette" item-left></ion-icon>\n            <ion-label color="primary" floating>Cor</ion-label>\n            <ion-input type="text" formControlName="cor"></ion-input>  \n          </ion-item>\n        </ion-col>\n        <ion-col>\n          <ion-item>\n            <ion-icon color="primary" name="md-expand" item-left></ion-icon>\n            <ion-label color="primary" floating>Tamanho</ion-label>\n            <ion-input type="text" formControlName="tamanho"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n\n      <ion-item>\n        <ion-icon color="primary" name="md-calculator" item-left></ion-icon>\n        <ion-label color="primary" floating>Valor compra</ion-label>\n        <ion-input type="number" formControlName="valCompra"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-icon color="primary" name="md-calculator" item-left></ion-icon>\n        <ion-label color="primary" floating>Valor venda</ion-label>\n        <ion-input type="number" formControlName="valVenda"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-icon color="primary" name="md-archive" item-left></ion-icon>\n        <ion-label color="primary" floating>Quantidade</ion-label>\n        <ion-input type="number" formControlName="qtd_disp"></ion-input>\n      </ion-item>\n    </ion-grid>\n  </form>\n\n  <ion-fab bottom right #fab>\n    <button ion-fab (click)="onSubmit()" [disabled]="form.invalid"><ion-icon name="md-checkmark"></ion-icon></button>\n  </ion-fab>\n</ion-content>'/*ion-inline-end:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/products-form/products-form.html"*/
+            selector: 'page-products-form',template:/*ion-inline-start:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\products-form\products-form.html"*/'<ion-header>\n  <ion-navbar no-border-bottom>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-buttons right>\n      <ion-fab right middle>\n        <button ion-fab mini color="primary" (click)="onScan()">\n          <ion-icon name="md-qr-scanner"></ion-icon>\n        </button>\n      </ion-fab>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <form [formGroup]="form" (ngSubmit)="onSubmit(); $event.preventDefault()">\n    <ion-grid>\n      <ion-item>\n        <ion-icon color="primary" name="md-barcode" item-left></ion-icon>\n        <ion-label color="primary" floating>Código de barras</ion-label>\n        <ion-input type="text" formControlName="codBarras"></ion-input>  \n      </ion-item>\n\n      <ion-item>\n        <ion-icon color="primary" name="md-shirt" item-left></ion-icon>\n        <ion-label color="primary" floating>Produto</ion-label>\n        <ion-input type="text" formControlName="desc"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-icon color="primary" name="md-information-circle" item-left></ion-icon>\n        <ion-label color="primary" floating>Código</ion-label>\n        <ion-input type="text" formControlName="codigo"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-icon color="primary" name="md-pricetag" item-left></ion-icon>\n        <ion-label color="primary" floating>Marca</ion-label>\n        <ion-select interface="action-sheet" formControlName="marca">\n          <ion-option value="DeMillus">DeMillus</ion-option>\n          <ion-option value="Valisere">Valisére</ion-option>\n          <ion-option value="ValFrance">ValFrance</ion-option>\n          <ion-option value="Toque Intimo">Toque Íntimo</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-icon color="primary" name="md-color-palette" item-left></ion-icon>\n            <ion-label color="primary" floating>Cor</ion-label>\n            <ion-input type="text" formControlName="cor"></ion-input>  \n          </ion-item>\n        </ion-col>\n        <ion-col>\n          <ion-item>\n            <ion-icon color="primary" name="md-expand" item-left></ion-icon>\n            <ion-label color="primary" floating>Tamanho</ion-label>\n            <ion-input type="text" formControlName="tamanho"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n\n      <ion-item>\n        <ion-icon color="primary" name="md-calculator" item-left></ion-icon>\n        <ion-label color="primary" floating>Valor compra</ion-label>\n        <ion-input type="number" formControlName="valCompra"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-icon color="primary" name="md-calculator" item-left></ion-icon>\n        <ion-label color="primary" floating>Valor venda</ion-label>\n        <ion-input type="number" formControlName="valVenda"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-icon color="primary" name="md-archive" item-left></ion-icon>\n        <ion-label color="primary" floating>Quantidade</ion-label>\n        <ion-input type="number" formControlName="qtd_disp"></ion-input>\n      </ion-item>\n    </ion-grid>\n  </form>\n\n  <ion-fab bottom right #fab>\n    <button ion-fab (click)="onSubmit()" [disabled]="form.invalid"><ion-icon name="md-checkmark"></ion-icon></button>\n  </ion-fab>\n</ion-content>'/*ion-inline-end:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\products-form\products-form.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
@@ -643,17 +644,17 @@ var ProductsFormPage = (function () {
 
 /***/ }),
 
-/***/ 296:
+/***/ 242:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrdersViewPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_services_orders__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_services_orders__ = __webpack_require__(49);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -715,7 +716,7 @@ var OrdersViewPage = (function () {
     };
     OrdersViewPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-orders-view',template:/*ion-inline-start:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/orders-view/orders-view.html"*/'<ion-header>\n  <ion-navbar no-border-bottom>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-list-header>Pedido #{{ orderId }}</ion-list-header>\n    <ion-list-header>Data / Hora: {{ orderDate }}</ion-list-header>\n    <ion-item-group>\n      <ion-item>Cliente: {{ orderCustomerName }}</ion-item>\n      <ion-item>Celular: {{ orderCustomerCellphone }}</ion-item>\n      <ion-item>Forma de Pagamento: {{ orderPaymentMethod }}</ion-item>\n      <ion-item>Retirada: {{ orderType }}</ion-item>\n      <ion-item>Forma de Venda: {{ orderSalesMethod }}</ion-item>\n    </ion-item-group>\n  </ion-list>\n  \n  <ion-list>\n    <ion-list-header>Lista de produtos</ion-list-header>\n    <ion-item-sliding *ngFor="let item of orderProductsList">\n      <ion-item>\n        <ion-row>\n          <ion-col justify-content-start>\n            <strong>{{ item[1].desc }}</strong>\n          </ion-col>\n        </ion-row>\n        \n        <ion-row>\n          <ion-col justify-content-start col-5><strong>Tam:</strong> {{ item[1].tamanho }}</ion-col>\n          <ion-col justify-content-end col-3><strong>Cor:</strong> {{ item[1].cor }}</ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col justify-content-end col-5><strong>Preço:</strong> R$ {{ item[1].valVenda }}</ion-col>\n          <ion-col justify-content-start col-3><strong>Marca:</strong> {{ item[1].marca }}</ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col justify-content-start col-5><strong>Qtde.:</strong> {{ item[1].qtd_pedido }}</ion-col>\n        </ion-row>\n      </ion-item>\n    </ion-item-sliding>\n  </ion-list>\n\n  <ion-list>\n    <ion-list-header>Subtotal</ion-list-header>\n    <ion-item-group>\n      <ion-item>R$ {{ orderTotalCosts }}</ion-item>\n    </ion-item-group>\n    <ion-list-header>Desconto</ion-list-header>\n    <ion-item-group>\n      <ion-item>R$ {{ orderDiscount }}</ion-item>\n    </ion-item-group>\n    <ion-list-header>Total</ion-list-header>\n    <ion-item-group>\n      <ion-item>R$ {{ orderTotalCosts }}</ion-item>\n    </ion-item-group>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/orders-view/orders-view.html"*/
+            selector: 'page-orders-view',template:/*ion-inline-start:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\orders-view\orders-view.html"*/'<ion-header>\n  <ion-navbar no-border-bottom>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-list-header>Pedido #{{ orderId }}</ion-list-header>\n    <ion-list-header>Data / Hora: {{ orderDate }}</ion-list-header>\n    <ion-item-group>\n      <ion-item>Cliente: {{ orderCustomerName }}</ion-item>\n      <ion-item>Celular: {{ orderCustomerCellphone }}</ion-item>\n      <ion-item>Forma de Pagamento: {{ orderPaymentMethod }}</ion-item>\n      <ion-item>Retirada: {{ orderType }}</ion-item>\n      <ion-item>Forma de Venda: {{ orderSalesMethod }}</ion-item>\n    </ion-item-group>\n  </ion-list>\n  \n  <ion-list>\n    <ion-list-header>Lista de produtos</ion-list-header>\n    <ion-item-sliding *ngFor="let item of orderProductsList">\n      <ion-item>\n        <ion-row>\n          <ion-col justify-content-start>\n            <strong>{{ item[1].desc }}</strong>\n          </ion-col>\n        </ion-row>\n        \n        <ion-row>\n          <ion-col justify-content-start col-5><strong>Tam:</strong> {{ item[1].tamanho }}</ion-col>\n          <ion-col justify-content-end col-3><strong>Cor:</strong> {{ item[1].cor }}</ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col justify-content-end col-5><strong>Preço:</strong> R$ {{ item[1].valVenda }}</ion-col>\n          <ion-col justify-content-start col-3><strong>Marca:</strong> {{ item[1].marca }}</ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col justify-content-start col-5><strong>Qtde.:</strong> {{ item[1].qtd_pedido }}</ion-col>\n        </ion-row>\n      </ion-item>\n    </ion-item-sliding>\n  </ion-list>\n\n  <ion-list>\n    <ion-list-header>Subtotal</ion-list-header>\n    <ion-item-group>\n      <ion-item>R$ {{ orderTotalCosts }}</ion-item>\n    </ion-item-group>\n    <ion-list-header>Desconto</ion-list-header>\n    <ion-item-group>\n      <ion-item>R$ {{ orderDiscount }}</ion-item>\n    </ion-item-group>\n    <ion-list-header>Total</ion-list-header>\n    <ion-item-group>\n      <ion-item>R$ {{ orderTotalCosts }}</ion-item>\n    </ion-item-group>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\orders-view\orders-view.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
@@ -733,16 +734,16 @@ var OrdersViewPage = (function () {
 
 /***/ }),
 
-/***/ 297:
+/***/ 243:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__customers_customers__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__orders_orders__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__products_products__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__customers_customers__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__orders_orders__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__products_products__ = __webpack_require__(64);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -766,7 +767,7 @@ var TabsPage = (function () {
         this.mySelectedIndex = navParams.data.tabIndex || 0;
     }
     TabsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/tabs-page/tabs-page.html"*/'<ion-tabs [selectedIndex]="mySelectedIndex" name="conference">\n  <ion-tab [root]="tab1Root" tabTitle="Clientes" tabIcon="people" tabUrlPath="customers"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Pedidos" tabIcon="basket" tabUrlPath="orders"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Produtos" tabIcon="cube" tabUrlPath="products"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/tabs-page/tabs-page.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\tabs-page\tabs-page.html"*/'<ion-tabs [selectedIndex]="mySelectedIndex" name="conference">\n  <ion-tab [root]="tab1Root" tabTitle="Clientes" tabIcon="people" tabUrlPath="customers"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Pedidos" tabIcon="basket" tabUrlPath="orders"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Produtos" tabIcon="cube" tabUrlPath="products"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\tabs-page\tabs-page.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
     ], TabsPage);
@@ -777,13 +778,13 @@ var TabsPage = (function () {
 
 /***/ }),
 
-/***/ 298:
+/***/ 244:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(299);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(264);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -791,40 +792,40 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 318:
+/***/ 264:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export firebaseConfig */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(265);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(360);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__ = __webpack_require__(364);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_date_picker__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_barcode_scanner__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_social_sharing__ = __webpack_require__(243);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_contacts__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_storage__ = __webpack_require__(245);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angularfire2__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angularfire2_database__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angularfire2_auth__ = __webpack_require__(456);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_component__ = __webpack_require__(461);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_customers_customers__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_customers_form_customers_form__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_orders_orders__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_orders_form_orders_form__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_orders_view_orders_view__ = __webpack_require__(296);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_products_products__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_products_form_products_form__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_tabs_page_tabs_page__ = __webpack_require__(297);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_user_data__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_services_customers__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__providers_services_orders__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_services_products__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_date_picker__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_barcode_scanner__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_social_sharing__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_contacts__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_storage__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angularfire2__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angularfire2_database__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angularfire2_auth__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_component__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_customers_customers__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_customers_form_customers_form__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_orders_orders__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_orders_form_orders_form__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_orders_view_orders_view__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_products_products__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_products_form_products_form__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_tabs_page_tabs_page__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_user_data__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_services_customers__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__providers_services_orders__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_services_products__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -939,24 +940,24 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 461:
+/***/ 362:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConferenceApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_date_picker__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(245);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_customers_customers__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_orders_orders__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_products_products__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_tabs_page_tabs_page__ = __webpack_require__(297);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_user_data__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_services_customers__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_services_orders__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_services_products__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_date_picker__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_customers_customers__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_orders_orders__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_products_products__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_tabs_page_tabs_page__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_user_data__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_services_customers__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_services_orders__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_services_products__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1034,37 +1035,29 @@ var ConferenceApp = (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Nav */])
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Nav */]) === "function" && _a || Object)
     ], ConferenceApp.prototype, "nav", void 0);
     ConferenceApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/app/app.template.html"*/'<ion-split-pane>\n  <ion-menu id="loggedOutMenu" [content]="content">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Davisa</ion-title>\n      </ion-toolbar>\n    </ion-header>\n\n    <ion-content class="outer-content">\n      <ion-list>\n        <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">\n          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>\n          {{p.title}}\n        </button>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main name="app"></ion-nav>\n</ion-split-pane>\n'/*ion-inline-end:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/app/app.template.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\app\app.template.html"*/'<ion-split-pane>\n  <ion-menu id="loggedOutMenu" [content]="content">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Davisa</ion-title>\n      </ion-toolbar>\n    </ion-header>\n\n    <ion-content class="outer-content">\n      <ion-list>\n        <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">\n          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>\n          {{p.title}}\n        </button>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main name="app"></ion-nav>\n</ion-split-pane>\n'/*ion-inline-end:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\app\app.template.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */],
-            __WEBPACK_IMPORTED_MODULE_9__providers_user_data__["a" /* UserData */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_date_picker__["a" /* DatePicker */],
-            __WEBPACK_IMPORTED_MODULE_10__providers_services_customers__["a" /* Customers */],
-            __WEBPACK_IMPORTED_MODULE_11__providers_services_orders__["a" /* Orders */],
-            __WEBPACK_IMPORTED_MODULE_12__providers_services_products__["a" /* Products */]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_9__providers_user_data__["a" /* UserData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__providers_user_data__["a" /* UserData */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_date_picker__["a" /* DatePicker */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_date_picker__["a" /* DatePicker */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_10__providers_services_customers__["a" /* Customers */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_10__providers_services_customers__["a" /* Customers */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_11__providers_services_orders__["a" /* Orders */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__providers_services_orders__["a" /* Orders */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_12__providers_services_products__["a" /* Products */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_12__providers_services_products__["a" /* Products */]) === "function" && _l || Object])
     ], ConferenceApp);
     return ConferenceApp;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
 }());
 
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-/***/ 60:
+/***/ 48:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Customers; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -1152,14 +1145,14 @@ var Customers = (function () {
 
 /***/ }),
 
-/***/ 61:
+/***/ 49:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Orders; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -1243,14 +1236,14 @@ var Orders = (function () {
 
 /***/ }),
 
-/***/ 62:
+/***/ 50:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Products; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -1325,19 +1318,19 @@ var Products = (function () {
 
 /***/ }),
 
-/***/ 82:
+/***/ 63:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrdersPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_services_orders__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__orders_form_orders_form__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__orders_view_orders_view__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_services_orders__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__orders_form_orders_form__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__orders_view_orders_view__ = __webpack_require__(242);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1412,7 +1405,7 @@ var OrdersPage = (function () {
     };
     OrdersPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-orders',template:/*ion-inline-start:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/orders/orders.html"*/'<ion-header>\n  <ion-navbar no-border-bottom>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n  <ion-toolbar no-border-top>\n    <ion-searchbar color="primary"\n                   [(ngModel)]="queryText"\n                   (ionInput)="getOrders()"\n                   placeholder="Buscar">\n    </ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-refresher (ionRefresh)="refresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-list>\n    <ion-item-sliding *ngFor="let item of ordersList | async">\n      <ion-item detail-push (click)="setOrder(item)">\n        <ion-label>\n          <strong>#{{ item.numPedido }}</strong> {{ item.date }} - {{ item.nomCliente }}\n        </ion-label>\n      </ion-item>\n      <ion-item-options side="right">\n        <button ion-button color="danger" icon-only (click)="deleteOrder(item)">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n\n  <ion-fab bottom right #fab>\n    <button ion-fab (click)="newOrder()"><ion-icon name="md-add"></ion-icon></button>\n  </ion-fab>\n</ion-content>'/*ion-inline-end:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/orders/orders.html"*/
+            selector: 'page-orders',template:/*ion-inline-start:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\orders\orders.html"*/'<ion-header>\n  <ion-navbar no-border-bottom>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n  <ion-toolbar no-border-top>\n    <ion-searchbar color="primary"\n                   [(ngModel)]="queryText"\n                   (ionInput)="getOrders()"\n                   placeholder="Buscar">\n    </ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-refresher (ionRefresh)="refresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-list>\n    <ion-item-sliding *ngFor="let item of ordersList | async">\n      <ion-item detail-push (click)="setOrder(item)">\n        <ion-label>\n          <strong>#{{ item.numPedido }}</strong> {{ item.date }} - {{ item.nomCliente }}\n        </ion-label>\n      </ion-item>\n      <ion-item-options side="right">\n        <button ion-button color="danger" icon-only (click)="deleteOrder(item)">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n\n  <ion-fab bottom right #fab>\n    <button ion-fab (click)="newOrder()"><ion-icon name="md-add"></ion-icon></button>\n  </ion-fab>\n</ion-content>'/*ion-inline-end:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\orders\orders.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
@@ -1430,17 +1423,17 @@ var OrdersPage = (function () {
 
 /***/ }),
 
-/***/ 83:
+/***/ 64:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_services_products__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__products_form_products_form__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_services_products__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__products_form_products_form__ = __webpack_require__(241);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1517,7 +1510,7 @@ var ProductsPage = (function () {
     };
     ProductsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-products',template:/*ion-inline-start:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/products/products.html"*/'<ion-header>\n  <ion-navbar no-border-bottom>\n    <button *ngIf="!modal" ion-button menuToggle>\n      <ion-icon name="md-menu"></ion-icon>\n    </button>\n\n    <button *ngIf="modal" ion-button (click)="dismiss()">\n      <ion-icon name="md-close"></ion-icon>\n    </button>\n  </ion-navbar>\n\n  <ion-toolbar no-border-top>\n    <ion-searchbar color="primary"\n                   [(ngModel)]="queryText"\n                   (ionInput)="getProducts()"\n                   placeholder="Buscar">\n    </ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-refresher (ionRefresh)="refresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-list>\n    <ion-item-sliding *ngFor="let item of items | async">\n      <ion-item detail-push (click)="setProduct(item)">\n        <h3>{{item.desc}}</h3>\n        \n        <ion-row>\n          <ion-col col-5><strong>Tam:</strong> {{ item.tamanho }}</ion-col>\n          <ion-col col-3><strong>Cor:</strong> {{ item.cor }}</ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col col-5><strong>Preço:</strong> {{ item.valVenda }}</ion-col>\n          <ion-col col-3><strong>Marca:</strong> {{ item.marca }}</ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col col-5><strong>Disp.:</strong> {{ item.qtd_disp }}</ion-col>\n        </ion-row>\n      </ion-item>\n      <ion-item-options side="right">\n        <button ion-button color="danger" icon-only (click)="deleteProduct(item)">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n\n  <ion-fab bottom right #fab>\n    <button ion-fab (click)="newProduct()"><ion-icon name="md-add"></ion-icon></button>\n  </ion-fab>\n</ion-content>'/*ion-inline-end:"/Volumes/FILES/GIT/github/davisa-sales-mobile/src/pages/products/products.html"*/
+            selector: 'page-products',template:/*ion-inline-start:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\products\products.html"*/'<ion-header>\n  <ion-navbar no-border-bottom>\n    <button *ngIf="!modal" ion-button menuToggle>\n      <ion-icon name="md-menu"></ion-icon>\n    </button>\n\n    <button *ngIf="modal" ion-button (click)="dismiss()">\n      <ion-icon name="md-close"></ion-icon>\n    </button>\n  </ion-navbar>\n\n  <ion-toolbar no-border-top>\n    <ion-searchbar color="primary"\n                   [(ngModel)]="queryText"\n                   (ionInput)="getProducts()"\n                   placeholder="Buscar">\n    </ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-refresher (ionRefresh)="refresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-list>\n    <ion-item-sliding *ngFor="let item of items | async">\n      <ion-item detail-push (click)="setProduct(item)">\n        <h3>{{item.desc}}</h3>\n        \n        <ion-row>\n          <ion-col col-5><strong>Tam:</strong> {{ item.tamanho }}</ion-col>\n          <ion-col col-3><strong>Cor:</strong> {{ item.cor }}</ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col col-5><strong>Preço:</strong> {{ item.valVenda }}</ion-col>\n          <ion-col col-3><strong>Marca:</strong> {{ item.marca }}</ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col col-5><strong>Disp.:</strong> {{ item.qtd_disp }}</ion-col>\n        </ion-row>\n      </ion-item>\n      <ion-item-options side="right">\n        <button ion-button color="danger" icon-only (click)="deleteProduct(item)">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n\n  <ion-fab bottom right #fab>\n    <button ion-fab (click)="newProduct()"><ion-icon name="md-add"></ion-icon></button>\n  </ion-fab>\n</ion-content>'/*ion-inline-end:"C:\Users\r.brassoroto\Documents\GitHub\myshop\src\pages\products\products.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
@@ -1535,5 +1528,5 @@ var ProductsPage = (function () {
 
 /***/ })
 
-},[298]);
+},[244]);
 //# sourceMappingURL=main.js.map
