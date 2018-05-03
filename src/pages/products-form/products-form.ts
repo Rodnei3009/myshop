@@ -75,6 +75,7 @@ export class ProductsFormPage {
       this.barcode = this.barcodeResult.text;
       this.form.patchValue({'codBarras' : this.barcode});
     }).catch((error: Error) => {
+      alert(error);
       console.log('barcode error: ', error);
     });
   }
