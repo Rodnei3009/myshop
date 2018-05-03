@@ -71,7 +71,7 @@
         <splash height="2048" src="resources/ios/splash/Default-Landscape@~ipadpro.png" width="2732" />
         <splash height="768" src="resources/ios/splash/Default-Landscape~ipad.png" width="1024" />
         <splash height="2732" src="resources/ios/splash/Default-Portrait@~ipadpro.png" width="2048" />
-        <edit-config file="*-Info.plist" mode="merge" overwrite="true" target="NSCameraUsageDescription">
+        <edit-config file="Davisa-Info.plist" mode="merge" overwrite="true" target="NSCameraUsageDescription">
             <string>This app requires camera access to function properly.</string>
         </edit-config>
     </platform>
@@ -87,7 +87,7 @@
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
-    <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
+    <edit-config file="Davisa-Info.plist" mode="merge" target="NSCameraUsageDescription">
         <string>This app requires camera access to function properly.</string>
     </edit-config>
     <plugin name="phonegap-plugin-barcodescanner" spec="~7.1.0" />
