@@ -71,9 +71,6 @@
         <splash height="2048" src="resources/ios/splash/Default-Landscape@~ipadpro.png" width="2732" />
         <splash height="768" src="resources/ios/splash/Default-Landscape~ipad.png" width="1024" />
         <splash height="2732" src="resources/ios/splash/Default-Portrait@~ipadpro.png" width="2048" />
-        <edit-config file="*-Info.plist" mode="merge" overwrite="true" target="NSCameraUsageDescription">
-            <string>This app requires camera access to function properly.</string>
-        </edit-config>
     </platform>
     <preference name="orientation" value="default" />
     <preference name="ScrollEnabled" value="false" />
@@ -87,10 +84,9 @@
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
-    <edit-config file="*-Info.plist" mode="merge" overwrite="true" target="NSCameraUsageDescription">
-        <string>This app requires camera access to function properly.</string>
-    </edit-config>
-    <plugin name="phonegap-plugin-barcodescanner" spec="~7.1.0" />
+    <plugin name="phonegap-plugin-barcodescanner" spec="~7.0.0">
+        <param name="CAMERA_USAGE_DESCRIPTION" value="To scan barcodes." />
+    </plugin>
     <plugin name="cordova-plugin-crosswalk-webview" spec="^2.3.0">
         <variable name="XWALK_VERSION" value="22+" />
         <variable name="XWALK_LITEVERSION" value="xwalk_core_library_canary:17+" />
