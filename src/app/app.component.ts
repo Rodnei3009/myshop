@@ -32,7 +32,7 @@ export interface PageInterface {
 @Component({
   templateUrl: 'app.template.html'
 })
-export class ConferenceApp {
+export class SalesApp {
   @ViewChild(Nav) nav: Nav;
 
   appPages: PageInterface[] = [

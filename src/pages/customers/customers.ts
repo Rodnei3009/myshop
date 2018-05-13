@@ -77,7 +77,7 @@ export class CustomersPage {
     this.navCtrl.push(CustomersFormPage, { data: { }, edit: false });
   }
 
-  deleteCustomer(customer) {
-    this.customers.deleteCustomer(customer);
+  deleteCustomer(id, customer) {
+    this.customers.deleteCustomer(id, customer);
   }
 }

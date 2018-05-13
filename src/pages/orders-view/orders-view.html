@@ -14,7 +14,6 @@
       <ion-item>Cliente: {{ orderCustomerName }}</ion-item>
       <ion-item>Celular: {{ orderCustomerCellphone }}</ion-item>
       <ion-item>Forma de Pagamento: {{ orderPaymentMethod }}</ion-item>
-      <ion-item>Retirada: {{ orderType }}</ion-item>
       <ion-item>Forma de Venda: {{ orderSalesMethod }}</ion-item>
     </ion-item-group>
   </ion-list>
@@ -49,15 +48,19 @@
   <ion-list>
     <ion-list-header>Subtotal</ion-list-header>
     <ion-item-group>
-      <ion-item>R$ {{ orderTotalCosts }}</ion-item>
+      <ion-item>R$ {{ orderSubTotalCurrencyFormatted }}</ion-item>
     </ion-item-group>
     <ion-list-header>Desconto</ion-list-header>
     <ion-item-group>
-      <ion-item>R$ {{ orderDiscount }}</ion-item>
+      <ion-item>R$ {{ orderDiscountCurrencyFormatted }} <em>({{ orderDiscount }}%)</em></ion-item>
+    </ion-item-group>
+    <ion-list-header>Frete</ion-list-header>
+    <ion-item-group>
+      <ion-item>R$ {{ orderShippingCurrencyFormatted }}</ion-item>
     </ion-item-group>
     <ion-list-header>Total</ion-list-header>
     <ion-item-group>
-      <ion-item>R$ {{ orderTotalCosts }}</ion-item>
+      <ion-item>R$ {{ orderTotalCurrencyFormatted }}</ion-item>
     </ion-item-group>
   </ion-list>
 </ion-content>

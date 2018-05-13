@@ -39965,6 +39965,10 @@ page-customers-form form .select-icon {
   top: -7px !important;
 }
 
+page-orders {
+  background: #fff;
+}
+
 page-orders ion-list ion-item {
   border-left-style: solid !important;
   border-left-width: 2px !important;
@@ -40046,6 +40050,10 @@ page-orders-view ion-list-header ion-label {
 
 page-orders-view ion-list {
   margin-bottom: 15px !important;
+}
+
+page-products {
+  background: #fff;
 }
 
 page-products ion-list ion-item {

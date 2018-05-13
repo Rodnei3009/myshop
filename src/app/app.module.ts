@@ -18,7 +18,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import { ConferenceApp } from './app.component';
+import { SalesApp } from './app.component';
 
 import { CustomersPage } from '../pages/customers/customers';
 import { CustomersFormPage } from '../pages/customers-form/customers-form';
@@ -48,7 +48,7 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    ConferenceApp,
+    SalesApp,
     TabsPage,
     CustomersPage,
     CustomersFormPage,
@@ -65,7 +65,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    IonicModule.forRoot(ConferenceApp, {}, {
+    IonicModule.forRoot(SalesApp, {}, {
       links: [
         { component: TabsPage, name: 'TabsPage', segment: 'tabs-page' },
         { component: CustomersPage, name: 'Customers', segment: 'customers' },
@@ -81,7 +81,7 @@ export const firebaseConfig = {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    ConferenceApp,
+    SalesApp,
     CustomersPage,
     CustomersFormPage,
     OrdersPage,

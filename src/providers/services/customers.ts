@@ -10,10 +10,12 @@ export class Customers {
   itemsRef: AngularFireList<any>;
   items: Observable<any[]>;
 
+  list: string = '/clientes/';
+
   constructor(public firebase: AngularFireDatabase) { }
 
   public getCustomers (query) {
-    this.itemsRef = this.firebase.list('/clientes/', ref => ref.orderByChild('nome'));
+    this.itemsRef = this.firebase.list(this.list, ref => ref.orderByChild('nome'));
 
     if(query) {
       if((typeof query) == 'string') {
@@ -28,7 +30,7 @@ export class Customers {
 
     this.items = query.length >= 1 ? (
       this.itemsRef.snapshotChanges().map(changes => {
-        let item = changes.filter(subItem => !subItem.payload.val().delete);
+        let item = changes.filter(subItem => !subItem.payload.val().deleted);
         item = item.filter(subItem => subItem.payload.val().nome.toLowerCase().includes(query[0]));
         if(query.length > 1) item = item.filter(subItem => subItem.payload.val().celular.toLowerCase().includes(query[1]));
 
@@ -44,7 +46,7 @@ export class Customers {
       })
     ) : (
       this.itemsRef.snapshotChanges().map(changes => {
-        const item = changes.filter(subItem => !subItem.payload.val().delete);
+        const item = changes.filter(subItem => !subItem.payload.val().deleted);
 
         const newItem = item.map(c => {
           const payload = Object.assign({}, c.payload.val(), {});
@@ -62,24 +64,22 @@ export class Customers {
   }
 
   public postCustomer (customer) {
-    this.firebase.list('/clientes/').push(customer);
+    this.firebase.list(this.list).push(customer);
   }
 
   public patchCustomer (id, customer) {
-    this.firebase.list('/clientes/').update(id, customer);
+    this.firebase.list(this.list).update(id, customer);
   }
 
-  public deleteCustomer (customer) {
+  public deleteCustomer (id, customer) {
     const date = new Date();
     const time = date.getFullYear() + "-" + String(date.getMonth() + 1) + "-" + date.getDate() + " " + String(date.getHours() + 1) + ":" + String(date.getMinutes() + 1) + ":" + String(date.getSeconds() + 1);
 
-    const deleted = Object.assign({}, customer, { delete: {
+    const deleted = Object.assign({}, customer, { deleted: {
       'userName': 'Davisa',
       'createdAt': time
     } });
 
-    const key = customer.key || '0112358132134558914423337761098715972584';
-
-    this.firebase.list('/clientes/').update(key, deleted);
+    this.firebase.list(this.list).update(id, deleted);
   }
 }

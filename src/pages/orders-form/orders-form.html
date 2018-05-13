@@ -83,8 +83,8 @@
       </ion-item-sliding>
 
       <ion-row *ngIf="itemsList">
-        <ion-col>Itens: {{ itemsQty }}</ion-col>
-        <ion-col>Valor: R$ {{ itemsTotalValue }}</ion-col>
+        <ion-col>Qtde.: {{ qty }}</ion-col>
+        <ion-col>Subtotal: R$ {{ subTotalCurrencyFormatted }}</ion-col>
       </ion-row>
 
       <ion-list-header *ngIf="itemsList">Informações de pagamento</ion-list-header>
@@ -96,14 +96,6 @@
             <ion-option value="Dinheiro">Dinheiro</ion-option>
             <ion-option value="Debito">Débito</ion-option>
             <ion-option value="Credito">Crédito</ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-icon color="primary" name="md-cart" item-left></ion-icon>
-          <ion-label color="primary" floating>Retirada</ion-label>
-          <ion-select interface="action-sheet" [(ngModel)]="orderType">
-            <ion-option value="Pronta Entrega">Pronta entrega</ion-option>
-            <ion-option value="Encomenda">Encomenda</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
@@ -120,6 +112,11 @@
           <ion-icon color="primary" name="md-pricetags" item-left></ion-icon>
           <ion-label color="primary" floating>Desconto</ion-label>
           <ion-input type="text" [(ngModel)]="discount"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon color="primary" name="md-cube" item-left></ion-icon>
+          <ion-label color="primary" floating>Frete</ion-label>
+          <ion-input type="text" [(ngModel)]="shipping"></ion-input>
         </ion-item>
       </div>
 

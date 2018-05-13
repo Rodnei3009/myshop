@@ -1,6 +1,8 @@
 $primary-color: #8E8D93;
 
 page-products {
+  background: #fff;
+  
   ion-list {
     ion-item {
       border-left: $primary-color 2px solid !important;

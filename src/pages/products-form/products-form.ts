@@ -30,7 +30,7 @@ export class ProductsFormPage {
     public formBuilder: FormBuilder,
 
     public products: Products,
-    public BarcodeScanner: BarcodeScanner
+    public barcodeScanner: BarcodeScanner
   ) {
     this.form = this.formBuilder.group({
       codBarras: [this.navParams.get('data').codBarras, Validators.required],
@@ -70,12 +70,11 @@ export class ProductsFormPage {
   }
 
   onScan() {
-    this.BarcodeScanner.scan().then((barcodeResult: BarcodeScanResult) => {
+    this.barcodeScanner.scan().then((barcodeResult: BarcodeScanResult) => {
       this.barcodeResult = barcodeResult;
       this.barcode = this.barcodeResult.text;
       this.form.patchValue({'codBarras' : this.barcode});
     }).catch((error: Error) => {
-      alert(error);
       console.log('barcode error: ', error);
     });
   }
