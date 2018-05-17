@@ -66,13 +66,13 @@
       <ion-item>
         <ion-icon color="primary" name="md-calculator" item-left></ion-icon>
         <ion-label color="primary" floating>Valor compra</ion-label>
-        <ion-input type="number" formControlName="valCompra"></ion-input>
+        <ion-input type="text" formControlName="valCompra" [brmasker]="{money: true}"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-icon color="primary" name="md-calculator" item-left></ion-icon>
         <ion-label color="primary" floating>Valor venda</ion-label>
-        <ion-input type="number" formControlName="valVenda"></ion-input>
+        <ion-input type="text" formControlName="valVenda" [brmasker]="{money: true}"></ion-input>
       </ion-item>
 
       <ion-item>

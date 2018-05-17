@@ -14,5 +14,11 @@ page-orders {
         color: $primary-color;
       }
     }
+
+    ion-item-options {
+      button {
+        padding-right: 0px !important;
+      }
+    }
   }
 }

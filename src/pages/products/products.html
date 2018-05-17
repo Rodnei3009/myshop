@@ -33,7 +33,7 @@
 
   <ion-list *ngIf="queryText.length">
     <ion-item-sliding *ngFor="let item of items | async">
-      <ion-item *ngIf="item.desc && item.tamanho && item.cor && item.marca && item.valVenda" detail-push (click)="setProduct(item)">
+      <ion-item *ngIf="item.desc && item.tamanho && item.cor && item.marca && item.valVenda" [ngClass]="{ 'sold-out': item.qtd_disp < 1 }" detail-push (click)="setProduct(item)">
         <h3>{{item.desc}}</h3>
         
         <ion-row>

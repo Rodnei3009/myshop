@@ -18,6 +18,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import { BrMaskerModule } from 'brmasker-ionic-3';
+
 import { SalesApp } from './app.component';
 
 import { CustomersPage } from '../pages/customers/customers';
@@ -77,7 +79,8 @@ export const firebaseConfig = {
         { component: ProductsFormPage, name: 'ProductsForm', segment: 'products-new' }
       ]
     }),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    BrMaskerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

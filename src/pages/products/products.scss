@@ -13,6 +13,20 @@ page-products {
         color: $primary-color;
       }
     }
+    
+    ion-item.sold-out {
+      background: #E0777D;
+
+      * {
+        color: #fff !important;
+      }
+    }
+  }
+
+  ion-item-options {
+    button {
+      padding-right: 0px !important;
+    }
   }
 
   ion-label {

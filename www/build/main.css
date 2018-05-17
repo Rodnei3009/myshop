@@ -39902,6 +39902,10 @@ page-customers ion-list ion-item ion-icon {
   color: #8E8D93;
 }
 
+page-customers ion-list ion-item-options button {
+  padding-right: 0px !important;
+}
+
 page-customers-form form ion-icon {
   font-size: 45px !important;
   margin: 0px !important;
@@ -39978,6 +39982,10 @@ page-orders ion-list ion-item {
 
 page-orders ion-list ion-item ion-icon {
   color: #8E8D93;
+}
+
+page-orders ion-list ion-item-options button {
+  padding-right: 0px !important;
 }
 
 page-orders-form ion-row ion-col {
@@ -40066,6 +40074,18 @@ page-products ion-list ion-item ion-icon {
   color: #8E8D93;
 }
 
+page-products ion-list ion-item.sold-out {
+  background: #E0777D;
+}
+
+page-products ion-list ion-item.sold-out * {
+  color: #fff !important;
+}
+
+page-products ion-item-options button {
+  padding-right: 0px !important;
+}
+
 page-products ion-label h3 {
   font-size: 18px !important;
   font-weight: bold !important;
@@ -40147,12 +40167,13 @@ page-products-form form .col {
 }
 
 .tabbar {
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  display: none;
 }
 
 .tab-button {
   max-width: 200px;
+}
+
+.scroll-content {
+  margin-bottom: 0px !important;
 }

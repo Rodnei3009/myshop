@@ -66,15 +66,4 @@ export class CustomersFormPage {
     
     this.navCtrl.pop()
   }
-
-  cpf(number) {
-    if(number) {
-      number = number.replace(/\D/g, '')
-      number = number.replace(/(\d{3})(\d)/, '$1.$2')
-      number = number.replace(/(\d{3})(\d)/, '$1.$2')
-      number = number.replace(/(\d{3})(\d{1,2})$/, '$1-$2')
-    }
-
-    return number
-  }
 }
