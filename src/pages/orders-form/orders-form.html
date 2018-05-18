@@ -19,11 +19,9 @@
         <ion-input color="primary" [(ngModel)]="customerCellphone" (keyup)="onSearch()" (change)="onSearch()" (blur)="onSearch()"></ion-input>
       </ion-item>
       <ion-list-header *ngIf="customersList | async">Selecionar cliente</ion-list-header>
-      <ion-item-sliding *ngFor="let item of customersList | async">
-        <ion-item (click)="setCustomer(item)" detail-push>
-          {{ item.nome }}
-        </ion-item>
-      </ion-item-sliding>
+      <ion-item *ngFor="let item of customersList | async" (click)="setCustomer(item)" detail-push>
+        {{ item.nome }}
+      </ion-item>
     </ion-list>
 
     <ion-fab bottom right #fab>
@@ -57,7 +55,7 @@
       <ion-item-sliding *ngFor="let item of itemsList">
         <ion-item>
           <h3>{{item.desc}}</h3>
-          
+
           <div class="text-align-left">
             <ion-row>
               <ion-col col-5>Tam: {{ item.tamanho }}</ion-col>
@@ -74,7 +72,7 @@
             </ion-row>
           </div>
         </ion-item>
-        
+
         <ion-item-options side="right">
           <button ion-button color="danger" icon-only (click)="deleteItem(item)">
             <ion-icon name="trash"></ion-icon>
@@ -111,7 +109,7 @@
         <ion-item>
           <ion-icon color="primary" name="md-pricetags" item-left></ion-icon>
           <ion-label color="primary" floating>Desconto</ion-label>
-          <ion-input type="text" [(ngModel)]="discount"></ion-input>
+          <ion-input type="text" [brmasker]="{percent: true}" [(ngModel)]="discount"></ion-input>
         </ion-item>
         <ion-item>
           <ion-icon color="primary" name="md-cube" item-left></ion-icon>
@@ -134,12 +132,7 @@
           </button>
         </ion-col>
         <ion-col>
-          <button block ion-fab color="secondary" (click)="onSendWhats1()">
-            <ion-icon name="logo-whatsapp"></ion-icon>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button block ion-fab color="secondary" (click)="onSendWhats2()">
+          <button block ion-fab color="secondary" (click)="onSendWhats()">
             <ion-icon name="logo-whatsapp"></ion-icon>
           </button>
         </ion-col>

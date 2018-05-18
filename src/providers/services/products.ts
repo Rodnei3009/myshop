@@ -62,7 +62,7 @@ export class Products {
   }
 
   public deleteProduct (product) {
-    const date = new Date();
+    /* const date = new Date();
     const time = date.getFullYear() + "-" + String(date.getMonth() + 1) + "-" + date.getDate() + " " + String(date.getHours() + 1) + ":" + String(date.getMinutes() + 1) + ":" + String(date.getSeconds() + 1);
 
     const deleted = Object.assign({}, product, { deleted: {
@@ -70,8 +70,10 @@ export class Products {
       'createdAt': time
     } });
 
-    const key = product.key || '0112358132134558914423337761098715972584';
+    const key = product.key || '0112358132134558914423337761098715972584'; */
 
-    this.firebase.list(this.list).update(key, deleted);
+    if(product.key) {
+      this.firebase.list(this.list).remove(product.key);
+    }
   }
 }

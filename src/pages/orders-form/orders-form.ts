@@ -18,7 +18,7 @@ import { UserData } from './../../providers/user-data'
 
 import { CustomersFormPage } from './../customers-form/customers-form'
 import { ProductsPage } from './../products/products'
-import { OrdersPage } from './../orders/orders'
+// import { OrdersPage } from './../orders/orders'
 
 @Component({
   selector: 'page-orders-form',
@@ -76,7 +76,7 @@ export class OrdersFormPage {
     public alertCtrl: AlertController,
     public app: App,
     public loadingCtrl: LoadingController,
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     public toastCtrl: ToastController,
     public modalCtrl: ModalController,
@@ -90,7 +90,7 @@ export class OrdersFormPage {
     public socialSharing: SocialSharing,
     public contacts: Contacts
   ) {
-    
+
   }
 
   ionViewDidLoad() {
@@ -101,7 +101,7 @@ export class OrdersFormPage {
     this.loading = this.loadingCtrl.create({
       content: ''
     })
-  
+
     this.loading.present()
   }
 
@@ -127,11 +127,11 @@ export class OrdersFormPage {
         })
 
         message = message + list.join("") + "\n"
-        
+
         message = message + "Foi um prazer te atender :) "
-        
+
         break
-      
+
       case 'email':
         message = "Mensagem de e-mail"
 
@@ -148,7 +148,7 @@ export class OrdersFormPage {
       if(this.customerName) {
         this.queryText.push(this.customerName)
       }
-      
+
       if(this.customerCellphone) {
         this.queryText.push('')
         this.queryText.push(this.customerCellphone)
@@ -159,7 +159,7 @@ export class OrdersFormPage {
   }
 
   onSubmit() {
-    this.discount = Number(String(this.discount).replace(',','.'))
+    this.discount = Number(String(this.discount).replace(',','.').replace('%',''))
     this.discountPercent = Number(Number(this.discount) / 100)
     this.discountValue = Number(Number(this.subTotal) * Number(this.discountPercent))
 
@@ -171,7 +171,7 @@ export class OrdersFormPage {
     this.shippingCurrencyFormatted = Number(this.shipping).toFixed(2).replace('.',',')
     this.totalCurrencyFormatted = this.total.toFixed(2).replace('.',',')
 
-    this.data.celCliente = this.customer.celular;
+    this.customerCellphone = this.data.celCliente = this.customer.celular;
     this.data.nomCliente = this.customer.nome;
     this.data.formaPagamento = this.paymentMethod;
     this.data.formaVenda = this.salesMethod;
@@ -187,16 +187,23 @@ export class OrdersFormPage {
     if(confirm('Tem certeza que deseja enviar esse pedido? \n' + message)) {
       this.orders.postOrder(this.data)
 
+      this.itemsList.forEach(item => {
+        const patchedProduct = Object.assign({}, item, { qtd_disp: item.qtd_disp - 1 })
+
+        this.products.patchProduct(item.key, patchedProduct)
+      })
+
       this.sendSMS(message, this.customerCellphone)
     }
-
-    this.navCtrl.push(OrdersPage)
   }
 
-  setCustomer(customer) {
-    this.customer = customer
+  setCustomer(customer, repeat) {
+    if(!repeat) this.setCustomer(customer, 1)
+    else {
+      this.customer = customer
 
-    this.chRef.detectChanges()
+      this.chRef.detectChanges()
+    }
   }
 
   getCustomers() {
@@ -206,7 +213,7 @@ export class OrdersFormPage {
   onGetBarcode(): void {
     this.BarcodeScanner.scan().then((barcodeResult: BarcodeScanResult) => {
       this.presentLoading()
-      
+
       this.barcodeResult = barcodeResult
       this.barcode = this.barcodeResult.text
 
@@ -220,20 +227,25 @@ export class OrdersFormPage {
   }
 
   onNewItem(product) {
-    product.qtd_pedido = 1
+    if(product){
+      product.qtd_pedido = 1
 
-    if(!this.itemsList) this.itemsList = []
+      if(!this.itemsList) this.itemsList = []
 
-    product.index = this.itemsList.length + 1
+      product.index = this.itemsList.length + 1
 
-    this.itemsList.push(product)
-    this.setTotal()
+      this.itemsList.push(product)
+      this.setTotal()
+    }
   }
 
   setTotal() {
     this.qty = this.itemsList.length
-    this.subTotal = Number((this.itemsList.map(item => Number(item.valVenda.replace(',','.')))).reduce((total, current)=> total + current))
-    this.subTotalCurrencyFormatted = this.subTotal.toFixed(2).replace('.',',')
+
+    if(this.qty){
+      this.subTotal = Number((this.itemsList.map(item => Number(item.valVenda.replace(',','.')))).reduce((total, current)=> total + current))
+      this.subTotalCurrencyFormatted = this.subTotal.toFixed(2).replace('.',',')
+    }
   }
 
   onNewCustomer() {
@@ -249,6 +261,8 @@ export class OrdersFormPage {
   deleteItem(item) {
     this.itemsList = this.itemsList.filter((subItem, index) => (index != item.index - 1 && subItem))
 
+    this.setTotal()
+
     if(!this.itemsList.length) this.itemsList = null
   }
 
@@ -257,15 +271,15 @@ export class OrdersFormPage {
 
     let date = new Date()
     dateTime = this.daysArr[date.getDate()] + '/' + this.monthsArr[date.getMonth()] + '/' + date.getFullYear() + ' - ' + date.getHours() + ':' + date.getMinutes()
-    
+
     return dateTime
   }
 
   sendSMS(message: string, cellphone: any) {
     this.socialSharing.shareViaSMS(message, cellphone).then(() => {
-      alert('SMS com sucesso')
+      alert('SMS enviado com sucesso.')
     }).catch(() => {
-      alert('SMS com erro')   
+      alert('SMS indisponível.')
     })
   }
 
@@ -273,46 +287,38 @@ export class OrdersFormPage {
     this.socialSharing.canShareViaEmail().then(() => {
       alert('Envio de e-mail pronto.')
     }).catch(() => {
-      alert('E-mail não pode ser enviado.')
+      alert('Envio de e-mail indisponível.')
     })
-    
+
     this.socialSharing.shareViaEmail(message, subject, [ email ]).then(() => {
       alert('E-mail enviado com sucesso.')
     }).catch(() => {
-      alert('Erro ao enviar email.')
+      alert('E-mail indisponível.')
     })
   }
 
   onSendSMS() {
     let message: string = this.getMessage('sms')
 
+    alert(message)
+    alert(this.customerCellphone)
+
     this.sendSMS(message, this.customerCellphone)
   }
 
   onSendEmail() {
     let message: string = this.getMessage('email')
-    let subject: string = "Pedido Davida"
+    let subject: string = "Pedido Davisa"
     let email: string = this.userData.ORDER_EMAIL_TO
 
     this.sendEmail(message, subject, email)
   }
 
-  onSendWhats1(message, cellphone) {
+  onSendWhats(message, cellphone) {
     this.socialSharing.shareViaWhatsApp(message, cellphone, '').then(() => {
-      alert('whats com sucesso')
+      alert('Whatsapp enviado com sucesso.')
     }).catch(() => {
-      alert('whats com erro')
-    })
-  }
-
-  onSendWhats2() {
-    // let strQuery: string = '02111984888468'
-    let strQuery: string = '02119991405043'
-
-    this.contacts.find(this.contactFieldtoSearch, { filter: strQuery }).then((contacts) => {
-      alert(contacts)
-    }).catch((err) => {
-      alert('Error' + JSON.stringify(err))
+      alert('Whatsapp indisponível.')
     })
   }
 }

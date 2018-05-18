@@ -46,7 +46,7 @@ export class ProductsPage {
     this.loading = this.loadingCtrl.create({
       content: ''
     });
-  
+
     this.loading.present();
   }
 
@@ -66,7 +66,7 @@ export class ProductsPage {
 
   ionViewDidLoad() {
     this.app.setTitle('Produtos');
-    
+
     this.presentLoading();
     this.getProducts();
   }
@@ -81,9 +81,11 @@ export class ProductsPage {
 
   setProduct(product) {
     if(this.modal) {
-      this.dismiss(product);
+      if(product.qtd_disp) {
+        this.dismiss(product);
 
-      return false;
+        return false;
+      }
     }
 
     this.navCtrl.push(ProductsFormPage, { data: product, edit: true });
