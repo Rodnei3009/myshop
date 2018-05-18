@@ -78,7 +78,7 @@
       <ion-item>
         <ion-icon color="primary" name="md-archive" item-left></ion-icon>
         <ion-label color="primary" floating>Quantidade</ion-label>
-        <ion-input type="number" formControlName="qtd_disp"></ion-input>
+        <ion-input type="number" formControlName="qtd_disp" (keypress)="onQtyKeyPress($event)"></ion-input>
       </ion-item>
     </ion-grid>
   </form>

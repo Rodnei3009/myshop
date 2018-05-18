@@ -59,6 +59,13 @@ export class ProductsFormPage {
     this.app.setTitle('Novo Produto');
   }
 
+  onQtyKeyPress(event) {
+    if(!/^[0-9]$/g.test(event.key)) {
+      event.preventDefault()
+      return false
+    }
+  }
+
   onSubmit() {
     if(this.productId && this.edit === true) {
       this.products.patchProduct(this.productId, this.form.value);

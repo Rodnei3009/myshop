@@ -57,6 +57,20 @@ export class CustomersFormPage {
     this.app.setTitle('Novo Cliente')
   }
 
+  onCPFKeyPress(event) {
+    if(!/^[0-9]|\.|\-$/g.test(event.key)) {
+      event.preventDefault()
+      return false
+    }
+  }
+
+  onDateKeyPress(event) {
+    if(!/^[0-9]|\/$/g.test(event.key)) {
+      event.preventDefault()
+      return false
+    }
+  }
+
   onSubmit() {
     if(this.customerId) {
       this.customers.patchCustomer(this.customerId, this.form.value)
