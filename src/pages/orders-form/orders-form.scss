@@ -49,4 +49,18 @@ page-orders-form {
   .item-block {
     padding: 0px !important;
   }
+
+  .info {
+    padding-top: 10px;
+
+    .col span {
+      font-size: 18px;
+      display: block;
+      text-align: left;
+    }
+  }
+
+  .info .col:last-child span {
+    text-align: right;
+  }
 }

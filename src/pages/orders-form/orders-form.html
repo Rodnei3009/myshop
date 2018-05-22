@@ -80,9 +80,9 @@
         </ion-item-options>
       </ion-item-sliding>
 
-      <ion-row *ngIf="itemsList">
-        <ion-col>Qtde.: {{ qty }}</ion-col>
-        <ion-col>Subtotal: R$ {{ subTotalCurrencyFormatted }}</ion-col>
+      <ion-row class="info" *ngIf="itemsList">
+        <ion-col><span>Qtde.: {{ qty }}</span></ion-col>
+        <ion-col><span>Subtotal: R$ {{ subTotalCurrencyFormatted }}</span></ion-col>
       </ion-row>
 
       <ion-list-header *ngIf="itemsList">Informações de pagamento</ion-list-header>
@@ -114,15 +114,15 @@
         <ion-item>
           <ion-icon color="primary" name="md-cube" item-left></ion-icon>
           <ion-label color="primary" floating>Frete</ion-label>
-          <ion-input type="text" [(ngModel)]="shipping"></ion-input>
+          <ion-input type="text" [(ngModel)]="shipping" [brmasker]="{money: true}"></ion-input>
         </ion-item>
       </div>
 
       <button *ngIf="itemsList" ion-button block type="button" color="primary" (click)="onSubmit()">Confirmar</button>
 
-      <ion-row *ngIf="itemsList">
+      <ion-row *ngIf="itemsList && confirm">
         <ion-col>
-          <button block ion-fab color="dark" (click)="onSendMail()">
+          <button block ion-fab color="dark" (click)="onSendEmail()">
             <ion-icon name="md-mail"></ion-icon>
           </button>
         </ion-col>

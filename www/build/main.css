@@ -40035,6 +40035,20 @@ page-orders-form .item-block {
   padding: 0px !important;
 }
 
+page-orders-form .info {
+  padding-top: 10px;
+}
+
+page-orders-form .info .col span {
+  font-size: 18px;
+  display: block;
+  text-align: left;
+}
+
+page-orders-form .info .col:last-child span {
+  text-align: right;
+}
+
 page-orders-view ion-item {
   padding: 0px 10px !important;
 }

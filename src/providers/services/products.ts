@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 
 export class Products {
-  itemsRef: AngularFireList<any>;
+  itemsRef: any;
   items: Observable<any[]>;
 
   list: string = '/produtos/';
@@ -15,40 +15,23 @@ export class Products {
   constructor(public firebase: AngularFireDatabase) { }
 
   public getProducts (query) {
-    this.itemsRef = this.firebase.list(this.list, ref => ref.orderByChild('desc'));
+    this.itemsRef = this.firebase.list(this.list, ref => ref.orderByChild('desc')).snapshotChanges();
 
-    this.items = query ? (
-      this.itemsRef.snapshotChanges().map(changes => {
-        const item = changes.filter(subItem => ((subItem.payload.val().desc.toLowerCase().includes(query.toLowerCase()) ||
-          subItem.payload.val().marca.toLowerCase().includes(query.toLowerCase()) ||
-          subItem.payload.val().codigo.includes(query) ||
-          subItem.payload.val().codBarras.includes(query)) &&
-          !subItem.payload.val().deleted)
-        );
-
-        return item.map(c => {
-          const payload = Object.assign({}, c.payload.val(), {});
-
-          payload.desc = payload.desc ? payload.desc.toUpperCase() : '';
-          payload.valVenda = payload.valVenda ? payload.valVenda.replace('.',',') : '';
-
-          return ({ key: c.payload.key, ...payload })
-        });
-      })
-    ) : (
-      this.itemsRef.snapshotChanges().map(changes => {
-        const item = changes.filter(subItem => !subItem.payload.val().deleted);
-
-        return item.map(c => {
-          const payload = Object.assign({}, c.payload.val(), {});
-
-          payload.desc = payload.desc ? payload.desc.toUpperCase() : '';
-          payload.valVenda = payload.valVenda ? payload.valVenda.replace('.',',') : '';
-
-          return ({ key: c.payload.key, ...payload })
-        })
-      })
-    );
+    this.items = (this.itemsRef.map(
+      item => (item.filter(
+        subItem => subItem.payload.val()).map(
+          subItem => (query && subItem.payload.val().desc && subItem.payload.val().codigo && subItem.payload.val().codBarras ?
+            subItem.payload.val().desc.toLowerCase().indexOf(query.toLowerCase()) >= 0 ||
+            subItem.payload.val().codigo.toLowerCase().indexOf(query.toLowerCase()) >= 0 ||
+            subItem.payload.val().codBarras.toLowerCase().indexOf(query.toLowerCase()) >= 0 :
+            false ) ?
+          { key: subItem.payload.key, ...subItem.payload.val() } :
+          false
+        )
+      )
+    )).filter(item => {
+      return item
+    });
 
     return this.items;
   }

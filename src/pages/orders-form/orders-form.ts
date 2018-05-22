@@ -61,6 +61,7 @@ export class OrdersFormPage {
   customersList: Observable<any[]>
   productsList: Observable<any[]>
   itemsList: any = null
+  confirm: boolean = false
   qty: Number = 0
   total: Number = 0
   subTotal: Number = 0
@@ -90,7 +91,7 @@ export class OrdersFormPage {
     public socialSharing: SocialSharing,
     public contacts: Contacts
   ) {
-
+    this.confirm = false
   }
 
   ionViewDidLoad() {
@@ -107,6 +108,7 @@ export class OrdersFormPage {
 
   getMessage(type: string) {
     let message: string = ""
+    let list: string = ""
 
     switch(type) {
       case 'sms':
@@ -120,7 +122,7 @@ export class OrdersFormPage {
         message = message + "Total: R$ " + this.totalCurrencyFormatted + "\n"
         message = message + "Itens: " + "\n"
 
-        const list = this.itemsList.map(item => {
+        list = this.itemsList.map(item => {
           const description = item.desc + " -> R$ " + item.valVenda + "\n"
 
           return description
@@ -134,6 +136,26 @@ export class OrdersFormPage {
 
       case 'email':
         message = "Mensagem de e-mail"
+        message = message + "\n"
+        message = "Obrigado por comprar na Davisa."
+        message = message + "\n"
+        message = message + "Detalhes do seu pedido:" + "\n"
+        message = message + "Qtde de itens: " + + this.qty + "\n"
+        message = message + "Subtotal: R$ " + this.subTotalCurrencyFormatted + "\n"
+        message = message + "Desconto: R$ " + this.discountCurrencyFormatted + " (" + this.discount + "%)\n"
+        message = message + "Frete: R$ " + this.shippingCurrencyFormatted + "\n"
+        message = message + "Total: R$ " + this.totalCurrencyFormatted + "\n"
+        message = message + "Itens: " + "\n"
+
+        list = this.itemsList.map(item => {
+          const description = item.desc + " -> R$ " + item.valVenda + "\n"
+
+          return description
+        })
+
+        message = message + list.join("") + "\n"
+
+        message = message + "Foi um prazer te atender :) "
 
         break
     }
@@ -184,16 +206,18 @@ export class OrdersFormPage {
 
     let message: string = this.getMessage('sms')
 
-    if(confirm('Tem certeza que deseja enviar esse pedido? \n' + message)) {
+    if(confirm('Deseja confirmar esse pedido? \n' + message)) {
       this.orders.postOrder(this.data)
 
       this.itemsList.forEach(item => {
         const patchedProduct = Object.assign({}, item, { qtd_disp: item.qtd_disp - 1 })
 
-        this.products.patchProduct(item.key, patchedProduct)
+        if(item.key) {
+          this.products.patchProduct(item.key, patchedProduct)
+        }
       })
 
-      this.sendSMS(message, this.customerCellphone)
+      this.confirm = true
     }
   }
 
