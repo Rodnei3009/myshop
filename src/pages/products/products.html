@@ -4,6 +4,10 @@
       <ion-icon name="md-menu"></ion-icon>
     </button>
 
+    <!--
+    <ion-title>Produtos</ion-title>
+    -->
+
     <button *ngIf="modal" ion-button (click)="dismiss()">
       <ion-icon name="md-close"></ion-icon>
     </button>
@@ -21,7 +25,7 @@
     <ion-searchbar color="primary"
                    [(ngModel)]="queryText"
                    (ionInput)="getProducts()"
-                   placeholder="Buscar">
+                   placeholder="Digite o código ou nome do produto...">
     </ion-searchbar>
   </ion-toolbar>
 </ion-header>

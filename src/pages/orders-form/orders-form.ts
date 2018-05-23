@@ -108,7 +108,7 @@ export class OrdersFormPage {
 
   getMessage(type: string) {
     let message: string = ""
-    let list: string = ""
+    let list: any = []
 
     switch(type) {
       case 'sms':
