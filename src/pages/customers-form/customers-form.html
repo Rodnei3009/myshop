@@ -12,25 +12,25 @@
     <ion-item>
       <ion-icon color="primary" name="md-person" item-left></ion-icon>
       <ion-label color="primary" floating>Nome</ion-label>
-      <ion-input type="text" formControlName="nome"></ion-input>
+      <ion-input type="text" formControlName="nome" (keyup.enter)="inputCel.setFocus()"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-icon color="primary" name="md-phone-portrait" item-left></ion-icon>
       <ion-label color="primary" floating>Celular</ion-label>
-      <ion-input type="tel" formControlName="celular"></ion-input>
+      <ion-input #inputCel type="tel" formControlName="celular" (keyup.enter)="inputEmail.setFocus()"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-icon color="primary" name="md-at" item-left></ion-icon>
       <ion-label color="primary" floating>E-mail</ion-label>
-      <ion-input type="text" formControlName="email"></ion-input>
+      <ion-input #inputEmail type="text" formControlName="email" (keyup.enter)="selectSexo.open()"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-icon color="primary" name="md-body" item-left></ion-icon>
       <ion-label color="primary" floating>Sexo</ion-label>
-      <ion-select interface="action-sheet" formControlName="Sexo">
+      <ion-select #selectSexo interface="action-sheet" formControlName="Sexo" (ionChange)="inputProf.setFocus()">
         <ion-option value="F">Feminino</ion-option>
         <ion-option value="M">Masculino</ion-option>
       </ion-select>
@@ -39,37 +39,43 @@
     <ion-item>
       <ion-icon color="primary" name="md-construct" item-left></ion-icon>
       <ion-label color="primary" floating>Profissão</ion-label>
-      <ion-input type="text" formControlName="prof"></ion-input>
+      <ion-input #inputProf type="text" formControlName="prof" (keyup.enter)="inputEstCiv.setFocus()"></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-icon color="primary" name="md-contacts" item-left></ion-icon>
       <ion-label color="primary" floating>Estado Civil</ion-label>
-      <ion-input type="text" formControlName="estcivil"></ion-input>
+      <ion-input #inputEstCiv type="text" formControlName="estcivil" (keyup.enter)="inputAniver.setFocus()"></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-icon color="primary" name="md-calendar" item-left></ion-icon>
       <ion-label color="primary" floating>Aniversário</ion-label>
-      <ion-input type="text" (keypress)="onDateKeyPress($event)" [brmasker]="{ mask: '00/00/0000', len: 10 }" formControlName="aniver"></ion-input>
+      <ion-input #inputAniver type="text" (keypress)="onDateKeyPress($event)" [brmasker]="{ mask: '00/00/0000', len: 10 }" formControlName="aniver" (keyup.enter)="inputCPF.setFocus()"></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-icon color="primary" name="md-card" item-left></ion-icon>
       <ion-label color="primary" floating>CPF</ion-label>
-      <ion-input type="text" (keypress)="onCPFKeyPress($event)" [brmasker]="{ mask: '000.000.000-00', len:14 }" formControlName="CPF"></ion-input>
+      <ion-input #inputCPF type="text" (keypress)="onCPFKeyPress($event)" [brmasker]="{ mask: '000.000.000-00', len:14 }" formControlName="CPF" (keyup.enter)="inputRG.setFocus()"></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-icon color="primary" name="md-finger-print" item-left></ion-icon>
       <ion-label color="primary" floating>RG</ion-label>
-      <ion-input type="text" formControlName="RG" maxlength="20"></ion-input>
+      <ion-input #inputRG type="text" formControlName="RG" maxlength="20" (keyup.enter)="inputEnd.setFocus()"></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-icon color="primary" name="md-home" item-left></ion-icon>
       <ion-label color="primary" floating>Endereço</ion-label>
-      <ion-input type="text" formControlName="endereco"></ion-input>
+      <ion-input #inputEnd type="text" formControlName="endereco" (keyup.enter)="inputComp.setFocus()"></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-icon color="primary" name="md-infinite" item-left></ion-icon>
       <ion-label color="primary" floating>Complemento</ion-label>
-      <ion-input type="text" formControlName="complemento"></ion-input>
+      <ion-input #inputComp type="text" formControlName="complemento" (keyup.enter)="selectInd.open()"></ion-input>
     </ion-item>
 
     <!--
@@ -83,17 +89,18 @@
     <ion-item>
       <ion-icon color="primary" name="md-information-circle" item-left></ion-icon>
       <ion-label color="primary" floating>Indicação</ion-label>
-      <ion-select interface="action-sheet" formControlName="indicacao">
+      <ion-select #selectInd interface="action-sheet" formControlName="indicacao">
         <ion-option value="Bazar">Bazar</ion-option>
         <ion-option value="Rede Social">Rede Social</ion-option>
         <ion-option value="Whatsapp">Whatsapp</ion-option>
         <ion-option value="Outros">Outros</ion-option>
       </ion-select>
     </ion-item>
-
   </form>
 
   <ion-fab bottom right #fab>
     <button ion-fab (click)="onSubmit()" [disabled]="form.invalid"><ion-icon name="md-checkmark"></ion-icon></button>
   </ion-fab>
+
 </ion-content>
+

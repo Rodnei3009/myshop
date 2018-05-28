@@ -22,25 +22,25 @@
       <ion-item>
         <ion-icon color="primary" name="md-barcode" item-left></ion-icon>
         <ion-label color="primary" floating>Código de barras</ion-label>
-        <ion-input type="text" formControlName="codBarras"></ion-input>  
+        <ion-input #inputBarcode type="text" formControlName="codBarras" (keyup.enter)="inputProd.setFocus()"></ion-input>  
       </ion-item>
 
       <ion-item>
         <ion-icon color="primary" name="md-shirt" item-left></ion-icon>
         <ion-label color="primary" floating>Produto</ion-label>
-        <ion-input type="text" formControlName="desc"></ion-input>
+        <ion-input #inputProd type="text" formControlName="desc" (keyup.enter)="inputCod.setFocus()"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-icon color="primary" name="md-information-circle" item-left></ion-icon>
         <ion-label color="primary" floating>Código</ion-label>
-        <ion-input type="text" formControlName="codigo"></ion-input>
+        <ion-input #inputCod type="text" formControlName="codigo" (keyup.enter)="selectMarca.open()"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-icon color="primary" name="md-pricetag" item-left></ion-icon>
         <ion-label color="primary" floating>Marca</ion-label>
-        <ion-select interface="action-sheet" formControlName="marca">
+        <ion-select #selectMarca interface="action-sheet" formControlName="marca" (ionChange)="inputCor.setFocus()">
           <ion-option value="DeMillus">DeMillus</ion-option>
           <ion-option value="Valisere">Valisére</ion-option>
           <ion-option value="ValFrance">ValFrance</ion-option>
@@ -55,14 +55,14 @@
           <ion-item>
             <ion-icon color="primary" name="md-color-palette" item-left></ion-icon>
             <ion-label color="primary" floating>Cor</ion-label>
-            <ion-input type="text" formControlName="cor"></ion-input>  
+            <ion-input #inputCor type="text" formControlName="cor" (keyup.enter)="inputTamanho.setFocus()"></ion-input>  
           </ion-item>
         </ion-col>
         <ion-col>
           <ion-item>
             <ion-icon color="primary" name="md-expand" item-left></ion-icon>
             <ion-label color="primary" floating>Tamanho</ion-label>
-            <ion-input type="text" formControlName="tamanho"></ion-input>
+            <ion-input #inputTamanho type="text" formControlName="tamanho" (keyup.enter)="inputValComp.setFocus()"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -70,19 +70,19 @@
       <ion-item>
         <ion-icon color="primary" name="md-calculator" item-left></ion-icon>
         <ion-label color="primary" floating>Valor compra</ion-label>
-        <ion-input type="text" formControlName="valCompra" [brmasker]="{money: true}"></ion-input>
+        <ion-input #inputValComp type="text" formControlName="valCompra" [brmasker]="{money: true}" (keyup.enter)="inputValVenda.setFocus()"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-icon color="primary" name="md-calculator" item-left></ion-icon>
         <ion-label color="primary" floating>Valor venda</ion-label>
-        <ion-input type="text" formControlName="valVenda" [brmasker]="{money: true}"></ion-input>
+        <ion-input #inputValVenda type="text" formControlName="valVenda" [brmasker]="{money: true}" (keyup.enter)="inputQtd.setFocus()"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-icon color="primary" name="md-archive" item-left></ion-icon>
         <ion-label color="primary" floating>Quantidade</ion-label>
-        <ion-input type="number" formControlName="qtd_disp" (keypress)="onQtyKeyPress($event)"></ion-input>
+        <ion-input #inputQtd type="number" formControlName="qtd_disp" (keypress)="onQtyKeyPress($event)"></ion-input>
       </ion-item>
     </ion-grid>
   </form>
