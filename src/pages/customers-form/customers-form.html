@@ -12,7 +12,7 @@
     <ion-item>
       <ion-icon color="primary" name="md-person" item-left></ion-icon>
       <ion-label color="primary" floating>Nome</ion-label>
-      <ion-input type="text" formControlName="nome" (keyup.enter)="inputCel.setFocus()"></ion-input>
+      <ion-input #inputNome type="text" formControlName="nome" (keyup.enter)="inputCel.setFocus()"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -30,7 +30,7 @@
     <ion-item>
       <ion-icon color="primary" name="md-body" item-left></ion-icon>
       <ion-label color="primary" floating>Sexo</ion-label>
-      <ion-select #selectSexo interface="action-sheet" formControlName="Sexo" (ionChange)="inputProf.setFocus()">
+      <ion-select #selectSexo interface="action-sheet" formControlName="Sexo" (ionChange)="profissaoFocus()">
         <ion-option value="F">Feminino</ion-option>
         <ion-option value="M">Masculino</ion-option>
       </ion-select>

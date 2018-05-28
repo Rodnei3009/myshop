@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, ViewChild } from '@angular/core'
 
 import { AlertController, App, NavController, LoadingController, NavParams } from 'ionic-angular'
 
@@ -17,6 +17,10 @@ export class CustomersFormPage {
   queryText: String = '';
   customerId: any = '';
   birthday: any;
+
+  @ViewChild('inputNome') myInputNome;
+  @ViewChild('inputProf') myInputProf;
+
 
   constructor(
     public alertCtrl: AlertController,
@@ -55,7 +59,19 @@ export class CustomersFormPage {
 
   ionViewDidLoad() {
     this.app.setTitle('Novo Cliente')
+    setTimeout(() => {
+      this.myInputNome.setFocus();
+    },600); //a least 150ms.
   }
+
+    
+  profissaoFocus() {
+    //alert('aaa');
+    setTimeout(() => {
+      this.myInputProf.setFocus();
+    },600); //a least 150ms.
+  }
+  
 
   onCPFKeyPress(event) {
     if(!/^[0-9]|\.|\-$/g.test(event.key)) {

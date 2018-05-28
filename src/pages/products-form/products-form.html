@@ -40,7 +40,7 @@
       <ion-item>
         <ion-icon color="primary" name="md-pricetag" item-left></ion-icon>
         <ion-label color="primary" floating>Marca</ion-label>
-        <ion-select #selectMarca interface="action-sheet" formControlName="marca" (ionChange)="inputCor.setFocus()">
+        <ion-select #selectMarca interface="action-sheet" formControlName="marca" (ionChange)="corFocus()">
           <ion-option value="DeMillus">DeMillus</ion-option>
           <ion-option value="Valisere">Valisére</ion-option>
           <ion-option value="ValFrance">ValFrance</ion-option>

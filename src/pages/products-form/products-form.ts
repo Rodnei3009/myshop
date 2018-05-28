@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { AlertController, App, NavController, LoadingController, NavParams } from 'ionic-angular';
 
@@ -20,6 +20,9 @@ export class ProductsFormPage {
   productId: any = '';
   barcode: string = "";
   barcodeResult: BarcodeScanResult;
+
+  @ViewChild('inputBarcode') myInputBarcode;
+  @ViewChild('inputCor') myInputCor;
 
   constructor(
     public alertCtrl: AlertController,
@@ -57,6 +60,16 @@ export class ProductsFormPage {
 
   ionViewDidLoad() {
     this.app.setTitle('Novo Produto');
+    setTimeout(() => {
+      this.myInputBarcode.setFocus();
+    },600); //a least 150ms.
+  }
+
+  corFocus() {
+    //alert('aaa');
+    setTimeout(() => {
+      this.myInputCor.setFocus();
+    },600); //a least 150ms.
   }
 
   onQtyKeyPress(event) {
