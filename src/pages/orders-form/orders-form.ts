@@ -19,6 +19,7 @@ import { UserData } from './../../providers/user-data'
 import { CustomersFormPage } from './../customers-form/customers-form'
 import { ProductsPage } from './../products/products'
 // import { OrdersPage } from './../orders/orders'
+import { DatePipe } from '@angular/common'
 
 @Component({
   selector: 'page-orders-form',
@@ -45,6 +46,7 @@ export class OrdersFormPage {
   customer: any = null
   customerName: String = ''
   customerCellphone: String = ''
+  orderDate: String = new Date().toISOString();
   paymentMethod: String = ''
   salesMethod: String = ''
   discount: Number = 0
@@ -89,7 +91,9 @@ export class OrdersFormPage {
     public chRef: ChangeDetectorRef,
     public BarcodeScanner: BarcodeScanner,
     public socialSharing: SocialSharing,
-    public contacts: Contacts
+    public contacts: Contacts,
+
+    public datepipe: DatePipe
   ) {
     this.confirm = false
   }
@@ -201,7 +205,8 @@ export class OrdersFormPage {
     this.data.frete = Number(this.shipping);
     this.data.totalItens = Number(this.qty);
     this.data.valTotal = Number(this.subTotal);
-    this.data.dataHora = this.getDateTime();
+    //this.data.dataHora = this.getDateTime();
+    this.data.dataHora = this.datepipe.transform(this.orderDate, 'dd/MM/yyyy');
     this.data.itens = this.itemsList;
 
     let message: string = this.getMessage('sms')
@@ -345,4 +350,12 @@ export class OrdersFormPage {
       alert('Whatsapp indisponível.')
     })
   }
+
+  onDateKeyPress(event) {
+    if(!/^[0-9]|\/$/g.test(event.key)) {
+      event.preventDefault()
+      return false
+    }
+  }
+
 }

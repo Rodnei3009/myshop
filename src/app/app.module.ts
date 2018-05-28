@@ -39,6 +39,8 @@ import { Customers } from '../providers/services/customers';
 import { Orders } from '../providers/services/orders';
 import { Products } from '../providers/services/products';
 
+import { DatePipe } from '@angular/common';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyBJfyA0HoyDRGspLSWQ8g8oCfJYYg2l6XQ",
   authDomain: "davisa-modaintima.firebaseapp.com",
@@ -106,6 +108,7 @@ export const firebaseConfig = {
     AngularFireDatabase,
     SocialSharing,
     Contacts,
+    DatePipe,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

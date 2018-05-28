@@ -71,11 +71,26 @@
       <ion-label color="primary" floating>Complemento</ion-label>
       <ion-input type="text" formControlName="complemento"></ion-input>
     </ion-item>
+
+    <!--
     <ion-item>
       <ion-icon color="primary" name="md-information-circle" item-left></ion-icon>
       <ion-label color="primary" floating>Indicação</ion-label>
       <ion-input type="text" formControlName="indicacao"></ion-input>
     </ion-item>
+    -->
+    
+    <ion-item>
+      <ion-icon color="primary" name="md-information-circle" item-left></ion-icon>
+      <ion-label color="primary" floating>Indicação</ion-label>
+      <ion-select interface="action-sheet" formControlName="indicacao">
+        <ion-option value="Bazar">Bazar</ion-option>
+        <ion-option value="Rede Social">Rede Social</ion-option>
+        <ion-option value="Whatsapp">Whatsapp</ion-option>
+        <ion-option value="Outros">Outros</ion-option>
+      </ion-select>
+    </ion-item>
+
   </form>
 
   <ion-fab bottom right #fab>
