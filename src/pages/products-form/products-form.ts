@@ -20,6 +20,8 @@ export class ProductsFormPage {
   productId: any = '';
   barcode: string = "";
   barcodeResult: BarcodeScanResult;
+  //marcas = ["DeMillus", "Valisere", "ValFrance", "Toque Intimo", "Liz", "Duloren", "Dilady", "Fidelitá", "Marcyn"];
+  brands = ['DeMillus', 'Valisere'];
 
   @ViewChild('inputBarcode') myInputBarcode;
   @ViewChild('inputCor') myInputCor;
