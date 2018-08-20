@@ -8,6 +8,9 @@ import { BarcodeScanner, BarcodeScanResult } from '@ionic-native/barcode-scanner
 
 import { Products } from './../../providers/services/products';
 
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+
 @Component({
   selector: 'page-products-form',
   templateUrl: 'products-form.html'
@@ -21,7 +24,9 @@ export class ProductsFormPage {
   barcode: string = "";
   barcodeResult: BarcodeScanResult;
   //marcas = ["DeMillus", "Valisere", "ValFrance", "Toque Intimo", "Liz", "Duloren", "Dilady", "Fidelitá", "Marcyn"];
-  brands = ['DeMillus', 'Valisere'];
+
+  items: Observable<any[]>;
+
 
   @ViewChild('inputBarcode') myInputBarcode;
   @ViewChild('inputCor') myInputCor;
@@ -82,13 +87,17 @@ export class ProductsFormPage {
   }
 
   onSubmit() {
-    if(this.productId && this.edit === true) {
-      this.products.patchProduct(this.productId, this.form.value);
-    } else {
-      this.products.postProduct(this.form.value);
-    }
-    
-    this.navCtrl.pop();
+    //PENDENTE INCLUIR VALIDAÇÃO SE PRODUTO JA EXISTE
+    //if (!this.products.searchProduct(this.form.value.codBarras)) {
+      if(this.productId && this.edit === true) {
+        this.products.patchProduct(this.productId, this.form.value);
+      } else {
+        this.products.postProduct(this.form.value);
+      }
+      this.navCtrl.pop();
+    //} else {
+    //  alert('Um produto com o código ' + this.form.value.codBarras + ' já está cadastrado.');
+    //}
   }
 
   onScan() {

@@ -4,6 +4,7 @@ import { AlertController, App, NavController, ToastController, LoadingController
 
 import { Contacts, ContactFieldType } from '@ionic-native/contacts'
 
+import { ViewController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map'
 
@@ -76,6 +77,7 @@ export class OrdersFormPage {
   contactFieldtoSearch: ContactFieldType[] = ["phoneNumbers"]
 
   constructor(
+    public viewCtrl: ViewController,
     public alertCtrl: AlertController,
     public app: App,
     public loadingCtrl: LoadingController,
@@ -223,6 +225,8 @@ export class OrdersFormPage {
       })
 
       this.confirm = true
+      this.viewCtrl.dismiss();
+
     }
   }
 
